@@ -51,34 +51,36 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
               <hr />
             </div>
             <div className={styles.siebarItems}>
-              <div className={styles.items}>
-                <div>
+              <Link href="/">
+                <div className={styles.items}>
                   <GoHome size={23} className={styles.icons1} />
-                  <span> Home</span>
+                  <span>Home</span>
                 </div>
-              </div>
-              <Link href="/dashboard/Transection">
+              </Link>
+              <Link href="/dashboard">
                 <div className={styles.items}>
                   <SiWikidata size={23} className={styles.icons1} />
+                  <span>Dashboard</span>
+                </div>
+              </Link>
+              <Link href="/dashboard/Transection">
+                <div className={styles.items}>
+                  <BiTransfer size={23} className={styles.icons1} />
                   <span>Transection</span>
                 </div>
               </Link>
-              <div className={styles.items}>
-                <BiTransfer size={23} className={styles.icons1} />
-                Transections
-              </div>
-              <div className={styles.items}>
-                <LiaBookSolid size={23} className={styles.icons1} />
-                <span>address-book</span>
-              </div>
-              <div className={styles.items}>
-                <AiOutlineAppstoreAdd size={23} className={styles.icons1} />
-                <span>App</span>
-              </div>
-              <div className={styles.items}>
-                <AiOutlineSetting size={23} className={styles.icons1} />
-                <span>setting</span>
-              </div>
+              <Link href="/dashboard/Assets">
+                <div className={styles.items}>
+                  <AiOutlineAppstoreAdd size={23} className={styles.icons1} />
+                  <span>Assets</span>
+                </div>
+              </Link>
+              <Link href="/dashboard/Wrap">
+                <div className={styles.items}>
+                  <AiOutlineAppstoreAdd size={23} className={styles.icons1} />
+                  <span>Wrap</span>
+                </div>
+              </Link>
             </div>
           </div>
         </div>

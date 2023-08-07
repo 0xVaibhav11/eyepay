@@ -13,15 +13,19 @@ export default function Dashboard() {
                 <div>
                   <img src="./avatar.png" className={styles.avatar} />
                 </div>
-                <div className={styles.data}>
-                  <span style={{ color: "black", padding: "12px" }}>
-                    Acc Adress
-                  </span>{" "}
-                  0x23dfgrwe33t45.....
-                </div>
-                <div className={styles.data}>
-                  <span style={{ color: "#00FFFF", padding: "12px" }}>id</span>{" "}
-                  0x23dfgrwe33t45.....
+                <div className={styles.cardData}>
+                  <div className={styles.data}>
+                    <span style={{ color: "black", padding: "12px" }}>
+                      Acc Adress
+                    </span>{" "}
+                    0x23dfgrwe33t45.....
+                  </div>
+                  <div className={styles.data}>
+                    <span style={{ color: "#00FFFF", padding: "20px" }}>
+                      id
+                    </span>{" "}
+                    0x23dfgrwe33t45.....
+                  </div>
                 </div>
                 <div>
                   <div
@@ -35,7 +39,7 @@ export default function Dashboard() {
                   </div>
 
                   <div className={styles.buttonDiv}>
-                    <button className={styles.button1}>View Assets</button>
+                    <button className={styles.button}>View Assets</button>
                   </div>
                 </div>
               </div>

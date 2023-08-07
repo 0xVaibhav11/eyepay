@@ -8,41 +8,20 @@
     color: black;
     font-weight: 600;
   }
-  .a {
-    font: 800;
-    .b {
-      font-size: 0.75rem;
-      color: #818cf8;
-      font-weight: 900;
-      position: relative;
-      top: 0.5rem;
-      margin: 0 0 0 7px;
-      padding: 0 3px;
-      background: #e8e8e8;
-      width: fit-content;
-    }
 
-    .tabs {
-      display: flex;
-      flex-direction: row;
+  .tabs {
+    display: flex;
+    flex-direction: row;
 
-      color: black;
-      padding: 12px;
-      margin-left: 30px;
-      .button {
-        font-size: large;
-
-        &:hover {
-          border-bottom: 3px solid red;
-          padding-bottom: 4px;
-        }
-      }
-    }
+    color: black;
+    padding: 12px;
+    margin-left: 30px;
   }
   .heading1 {
     display: flex;
 
-    justify-content: space-between;
+    flex-direction: row-reverse;
+
     color: black;
     width: auto;
     height: 50px;
@@ -54,8 +33,8 @@
 
     .items1 {
       text-align: center;
-      display: flex;
 
+      display: flex;
       margin: 8px;
       justify-content: center;
       align-items: center;

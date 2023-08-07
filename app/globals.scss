@@ -1,0 +1,45 @@
+@import "./variables.scss";
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+*::selection {
+  background-color: #ff00ff;
+  color: #000000;
+}
+
+html,
+body {
+  font-size: 10px;
+  width: 100%;
+  max-width: calc(100vw - 1rem);
+  color: white;
+  font-family: var(--font-machina);
+}
+
+html {
+  background-color: $bg-color;
+  scroll-behavior: smooth;
+}
+
+img {
+  user-select: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
