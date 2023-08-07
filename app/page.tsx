@@ -4,7 +4,7 @@ import Image from "next/image";
 import styles from "./page.module.scss";
 import Link from "next/link";
 import { useDeviceSize } from "./components/useDeviceSize";
-import { motion, AnimatePresence } from "framer-motion";
+
 import { SplineViewer } from "./components/Threed";
 import Button from "./components/Button/Button";
 import Card from "./components/card/Card";
