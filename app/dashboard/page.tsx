@@ -66,8 +66,8 @@ export default function Dashboard() {
           <div className={styles.span2}>Apps</div>
           <div className={styles.container3}>
             <div className={styles.card5}></div>
-            <div className={styles.card5}></div>
-            <div className={styles.card5}></div>
+            <div style={{ marginLeft: "25px" }} className={styles.card5}></div>
+            <div style={{ marginLeft: "25px" }} className={styles.card5}></div>
           </div>
         </div>
       </div>
