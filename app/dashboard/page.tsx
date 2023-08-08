@@ -10,24 +10,27 @@ export default function Dashboard() {
             <div>
               <span className={styles.heading1}>Account info</span>
               <div className={styles.card1}>
-                <div>
-                  <img src="./avatar.png" className={styles.avatar} />
-                </div>
-                <div className={styles.cardData}>
-                  <div className={styles.data}>
-                    <span style={{ color: "black", padding: "12px" }}>
-                      Acc Adress
-                    </span>{" "}
-                    0x23dfgrwe33t45.....
+                <div className={styles.background1}>
+                  <div>
+                    <img src="./avatar.png" className={styles.avatar} />
                   </div>
-                  <div className={styles.data}>
-                    <span style={{ color: "#00FFFF", padding: "20px" }}>
-                      id
-                    </span>{" "}
-                    0x23dfgrwe33t45.....
+                  <div className={styles.cardData}>
+                    <div className={styles.data}>
+                      <span style={{ color: "black", padding: "12px" }}>
+                        Acc Adress
+                      </span>{" "}
+                      0x23dfgrwe33t45.....
+                    </div>
+                    <div className={styles.data}>
+                      <span style={{ color: "#00FFFF", padding: "20px" }}>
+                        id
+                      </span>{" "}
+                      0x23dfgrwe33t45.....
+                    </div>
                   </div>
                 </div>
-                <div>
+
+                <div className={styles.background2}>
                   <div
                     style={{
                       color: "rgb(255,196,186)",
@@ -37,7 +40,6 @@ export default function Dashboard() {
                   >
                     Tokens - 0
                   </div>
-
                   <div className={styles.buttonDiv}>
                     <button className={styles.button}>View Assets</button>
                   </div>
