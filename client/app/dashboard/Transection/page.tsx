@@ -1,5 +1,4 @@
 import styles from "./page.module.scss";
-import type { Tabs, TabItem } from "flowbite-svelte";
 
 export default function Transection() {
   return (
@@ -8,31 +7,50 @@ export default function Transection() {
         <div className={styles.heading}>Transaction</div>
         <div>
           <div className={styles.a}>
-            <div className={styles.tabs}>
+            {/* <div className={styles.tabs}>
               <div className={styles.button}>tab1</div>
               <div className={styles.button} style={{ marginLeft: "40px" }}>
                 tab2
               </div>
-            </div>
+            </div> */}
             <div className={styles.b}>chains</div>
           </div>
           <hr />
-          <div></div>
-          <div className={styles.heading1}>
-            <div className={styles.items1}>Name</div>
+        </div>
 
-            <div className={styles.items2}>Balance</div>
-            <div className={styles.items2}>Value</div>
-          </div>
-          <div style={{ color: "black", padding: "10px", marginTop: "5px" }}>
-            2 aug 12:34pm
-          </div>
-          <div className={styles.heading1}>
-            <div className={styles.items1}>Bitcoin</div>
+        <div className={styles.Transection}>
+          <h2>2 aug 4:30 pm</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Amount</th>
+                <th>Order id</th>
+                <th>chain</th>
+                <th>status</th>
+              </tr>
+            </thead>
 
-            <div className={styles.items2}>Balance</div>
-            <div className={styles.items2}>Value</div>
-          </div>
+            <tbody>
+              <tr>
+                <td>30</td>
+                <td>1172478989</td>
+                <td>zora</td>
+                <td>success</td>
+              </tr>
+              <tr>
+                <td>drone</td>
+                <td>drone</td>
+                <td>drone</td>
+                <td>drone</td>
+              </tr>
+              <tr>
+                <td>drone</td>
+                <td>drone</td>
+                <td>drone</td>
+                <td>drone</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </>

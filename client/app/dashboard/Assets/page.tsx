@@ -6,10 +6,6 @@ export default function Assets() {
       <div className={styles.main}>
         <div className={styles.heading}>Assets</div>
         <div>
-          <div className={styles.tabs}>
-            <div>tab1</div>
-            <div style={{ marginLeft: "10px" }}>tab2</div>
-          </div>
           <hr />
 
           <div className={styles.heading1}>

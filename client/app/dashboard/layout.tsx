@@ -72,7 +72,7 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
               <Link href="/dashboard/Assets">
                 <div className={styles.items}>
                   <AiOutlineAppstoreAdd size={23} className={styles.icons1} />
-                  <span>Assets</span>
+                  <span>recetpt</span>
                 </div>
               </Link>
               <Link href="/dashboard/Wrap">
