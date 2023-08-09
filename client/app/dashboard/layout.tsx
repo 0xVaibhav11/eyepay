@@ -2,7 +2,7 @@
 import styles from "./dashboard.module.scss";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { MdOutlineQrCodeScanner } from "react-icons/md";
 import { GoHome } from "react-icons/go";
 import { SiWikidata } from "react-icons/si";
@@ -11,7 +11,40 @@ import { LiaBookSolid } from "react-icons/lia";
 import { RxAvatar } from "react-icons/rx";
 import { AiOutlineAppstoreAdd, AiOutlineSetting } from "react-icons/ai";
 
+import { IconType } from "react-icons";
+
+import { Url } from "next/dist/shared/lib/router/router";
+type a = {
+  path: Url;
+  name: string;
+  icon: IconType;
+};
+
 export default function Dashboard({ children }: { children: React.ReactNode }) {
+  const [selected, setSelected] = useState(1);
+  const sideBarItems: Array<a> = [
+    {
+      path: "/",
+      name: "home",
+      icon: GoHome,
+    },
+    {
+      path: "/dashboard",
+      name: "Dashboard",
+      icon: SiWikidata,
+    },
+    {
+      path: "/dashboard/Transection",
+      name: "Transection",
+      icon: BiTransfer,
+    },
+    {
+      path: "/dashboard/Assets",
+      name: "Assets",
+      icon: AiOutlineAppstoreAdd,
+    },
+  ];
+
   return (
     <>
       <main className={styles.main}>
@@ -30,57 +63,32 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
             <div className={styles.iconsdiv}>
               <MdOutlineQrCodeScanner color="#000" size={30} />
             </div>
-            {/* 
-              <Image
-                alt="avatar"
-                className={styles.icon}
-                height={35}
-                width={35}
-                src="./images/assets/grid.svg"
-              />
-              <Image
-                alt="avatar"
-                className={styles.icon}
-                height={35}
-                width={35}
-                src="./images/assets/grid.svg"
-              />
-            */}
+
             <button className={styles.button1}>New transection</button>
             <div className={styles.hroizontalline}>
               <hr />
             </div>
             <div className={styles.siebarItems}>
-              <Link href="/">
-                <div className={styles.items}>
-                  <GoHome size={23} className={styles.icons1} />
-                  <span>Home</span>
-                </div>
-              </Link>
-              <Link href="/dashboard">
-                <div className={styles.items}>
-                  <SiWikidata size={23} className={styles.icons1} />
-                  <span>Dashboard</span>
-                </div>
-              </Link>
-              <Link href="/dashboard/Transection">
-                <div className={styles.items}>
-                  <BiTransfer size={23} className={styles.icons1} />
-                  <span>Transection</span>
-                </div>
-              </Link>
-              <Link href="/dashboard/Assets">
-                <div className={styles.items}>
-                  <AiOutlineAppstoreAdd size={23} className={styles.icons1} />
-                  <span>recetpt</span>
-                </div>
-              </Link>
-              <Link href="/dashboard/Wrap">
-                <div className={styles.items}>
-                  <AiOutlineAppstoreAdd size={23} className={styles.icons1} />
-                  <span>Wrap</span>
-                </div>
-              </Link>
+              {sideBarItems.map((item, index) => {
+                return (
+                  <>
+                    <Link href={item.path}>
+                      <div
+                        className={
+                          selected === index
+                            ? ` ${styles.items}`
+                            : ` ${styles.items1}`
+                        }
+                        key={index}
+                        onClick={() => setSelected(index)}
+                      >
+                        <item.icon size={23} className={styles.icons1} />
+                        <span>{item.name}</span>
+                      </div>
+                    </Link>
+                  </>
+                );
+              })}
             </div>
           </div>
         </div>

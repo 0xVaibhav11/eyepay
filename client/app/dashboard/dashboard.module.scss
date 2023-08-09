@@ -71,6 +71,25 @@
         gap: 1rem;
         margin-top: 24px;
         font-size: 19px;
+        padding: 10px;
+        background-color: #eef2ff;
+        font-weight: 600;
+
+        color: #818cf8;
+        height: 50px;
+        width: 200px;
+        border: 2px;
+        border-radius: 14px;
+        .icons1 {
+          padding-top: 9px;
+          gap: 1rem;
+        }
+      }
+
+      .items1 {
+        gap: 1rem;
+        margin-top: 24px;
+        font-size: 19px;
         color: black;
         padding: 10px;
 
@@ -83,7 +102,6 @@
           gap: 1rem;
         }
       }
-
       & :hover {
         background-color: #eef2ff;
         font-weight: 600;
@@ -345,19 +363,19 @@
         }
       }
 
-      .card5 {
-        height: 20vh;
-        width: 48.5vh;
-        box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+      // .card5 {
+      //   height: 20vh;
+      //   width: 48.5vh;
+      //   box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
 
-        color: black;
-        background-color: white;
-        border: 2px;
-        border-radius: 25px;
-        &:hover {
-          transform: translateY(-1px);
-        }
-      }
+      //   color: black;
+      //   background-color: white;
+      //   border: 2px;
+      //   border-radius: 25px;
+      //   &:hover {
+      //     transform: translateY(-1px);
+      //   }
+      // }
     }
   }
 }
