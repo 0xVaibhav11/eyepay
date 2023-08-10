@@ -40,8 +40,8 @@
     justify-content: center;
     place-items: center;
     .card {
-      width: 50%;
-      height: 70%;
+      width: 40%;
+      height: 50%;
       background: $bg-color;
       position: relative;
       display: flex;
@@ -181,11 +181,11 @@
       transform: translateX(50%) rotateZ(-45deg);
     }
 
-    @for $i from 1 through 20 {
+    @for $i from 1 through 1880s {
       &:nth-child(#{$i}) {
         $delay: random(9999) + 0ms;
-        top: calc(50% - #{random(400) - 200px});
-        left: calc(50% - #{random(300) + 0px});
+        top: calc(100% - #{random(2000) - 200px});
+        left: calc(50% - #{random(1200) + 0px});
         animation-delay: $delay;
         // opacity: random(50) / 100 + 0.5;
 

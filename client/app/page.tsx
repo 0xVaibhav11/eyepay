@@ -220,7 +220,7 @@ export default function Home() {
               />{" "}
               <Image
                 priority
-                src="/sponserpngs/hyperlane.png"
+                src="/sponserpngs/layerzero.png"
                 alt="arrow"
                 width={155}
                 height={58}
