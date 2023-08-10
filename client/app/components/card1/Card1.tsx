@@ -1,13 +1,8 @@
-import "./Card1.css";
+import "./Card1.scss";
 export default function Card1() {
   return (
     <>
-      <div className="box">
-        <span></span>
-        <div className="content">
-          <h2>Hover me!</h2>
-        </div>
-      </div>
+      <div className="card">wweweesdfs</div>
     </>
   );
 }

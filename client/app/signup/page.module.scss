@@ -1,0 +1,99 @@
+@import "../variables.scss";
+.main {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  place-items: center;
+
+  .card1 {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    place-items: center;
+  }
+
+  .card2 {
+    height: 100%;
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    place-items: center;
+    .card {
+      width: 50%;
+      height: 70%;
+      background: $bg-color;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      place-content: center;
+      place-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-radius: 20px;
+
+      .title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        line-height: 2rem;
+        font-weight: 700;
+        color: white;
+        z-index: 1;
+      }
+
+      .button {
+        border: none;
+        outline: none;
+        display: inline-block;
+        border-radius: 0.25rem;
+        background-color: #818cf8;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        text-align: center;
+        font-weight: 600;
+        z-index: 1;
+        letter-spacing: 0.05em;
+        color: rgba(17, 24, 39, 1);
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100px;
+        background-image: linear-gradient(
+          180deg,
+          rgb(0, 183, 255),
+          rgb(255, 48, 255)
+        );
+        height: 130%;
+        animation: rotBGimg 3s linear infinite;
+        transition: all 0.2s linear;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        background: $bg-color;
+
+        inset: 5px;
+        border-radius: 15px;
+      }
+    }
+    @keyframes rotBGimg {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
