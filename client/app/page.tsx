@@ -21,7 +21,7 @@ export default function Home() {
     <>
       <main className={styles.main}>
         <div className={styles.background}>
-          <Image
+          <img
             className={styles.bggrid1}
             src="/images/assets/grid.svg"
             priority
@@ -29,7 +29,7 @@ export default function Home() {
             width={250}
             height={250}
           />
-          <Image
+          <img
             className={styles.bggrid2}
             src="/images/assets/grid2.svg"
             priority
@@ -38,7 +38,7 @@ export default function Home() {
             height={240}
           />
 
-          <Image
+          <img
             className={styles.line1}
             src="/images/assets/line2.svg"
             priority
