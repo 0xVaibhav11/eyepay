@@ -181,11 +181,11 @@
       transform: translateX(50%) rotateZ(-45deg);
     }
 
-    @for $i from 1 through 20 {
+    @for $i from 1 through 200 {
       &:nth-child(#{$i}) {
         $delay: random(9999) + 0ms;
-        top: calc(50% - #{random(400) - 200px});
-        left: calc(50% - #{random(300) + 0px});
+        top: calc(100% - #{random(1900) - 200px});
+        left: calc(60% - #{random(1200) + 0px});
         animation-delay: $delay;
         // opacity: random(50) / 100 + 0.5;
 

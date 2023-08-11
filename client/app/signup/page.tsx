@@ -51,6 +51,12 @@ export default function LoginWithWorldcoin() {
         <div className={styles.shooting_star} />
         <div className={styles.shooting_star} />
         <div className={styles.shooting_star} />
+        <div className={styles.shooting_star} />
+        <div className={styles.shooting_star} />
+        <div className={styles.shooting_star} />
+        <div className={styles.shooting_star} />
+        <div className={styles.shooting_star} />
+        <div className={styles.shooting_star} />
       </div>
       <div className={styles.forground}>
         <div className={styles.card2}>

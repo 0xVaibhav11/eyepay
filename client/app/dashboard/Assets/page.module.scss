@@ -1,52 +1,52 @@
 .main {
   height: 100vh;
   width: 100%;
-  padding: 50px;
-  margin-left: 30px;
-  .heading {
-    font-size: 30px;
-    color: black;
-    font-weight: 600;
-  }
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  place-items: center;
+  .card {
+    width: 250px;
+    height: 160px;
+    background-color: #eee;
+    text-align: center;
+    border: 10px solid #eee;
+    border-radius: 20px;
+    box-shadow: inset 5px 5px 10px #bbb, inset -5px -5px 10px #fff;
+    transition: 0.5s;
 
-  .tabs {
-    display: flex;
-    flex-direction: row;
-
-    color: black;
-    padding: 12px;
-    margin-left: 30px;
-  }
-  .heading1 {
-    display: flex;
-
-    flex-direction: row-reverse;
-
-    color: black;
-    width: auto;
-    height: 50px;
-    border: 2px;
-    border-radius: 12px;
-    background-color: white;
-    margin-top: 10px;
-    margin-left: 10px;
-
-    .items1 {
-      text-align: center;
-
-      display: flex;
-      margin: 8px;
-      justify-content: center;
-      align-items: center;
+    &:hover {
+      height: 310px;
+      .content {
+        transform: translateY(0px) scale(1);
+      }
     }
-    .items2 {
-      text-align: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 8px;
-      position: relative;
-      justify-content: center;
+
+    .icon {
+      width: 60px;
+      height: 60px;
+      color: red;
+      font-size: 30px;
+      background-color: #eee;
+      margin: 40px auto;
+      padding: 5px;
+      border-radius: 50%;
+      box-shadow: 8px 8px 10px #ddd, -8px -8px 10px #fff;
+    }
+
+    .content {
+      color: #818cf8;
+      background-color: #eee;
+      padding: 10px;
+      margin: 5px 20px;
+      border-radius: 8px;
+      box-shadow: 8px 8px 10px #ddd, -8px -8px 10px #fff;
+      transform: translateY(-80px) scale(0);
+
+      transition: all 0.5s;
+      h3 {
+        text-shadow: 2px 2px 0px #fff;
+      }
     }
   }
 }

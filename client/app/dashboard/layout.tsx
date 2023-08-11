@@ -60,11 +60,12 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
             <div>
               <hr />
             </div>
-            <div className={styles.iconsdiv}>
+            {/* <div className={styles.iconsdiv}>
               <MdOutlineQrCodeScanner color="#000" size={30} />
+            </div> */}
+            <div className={styles.buttondiv}>
+              <button className={styles.button1}>New transection</button>
             </div>
-
-            <button className={styles.button1}>New transection</button>
             <div className={styles.hroizontalline}>
               <hr />
             </div>

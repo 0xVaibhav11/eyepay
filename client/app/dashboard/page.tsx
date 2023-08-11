@@ -124,7 +124,7 @@ const Dashboard: React.FC = () => {
               </div>
             </div>
             <div>
-              <span className={styles.heading2}>overview</span>
+              <span className={styles.heading2}>about</span>
               <div className={styles.card2}>
                 <div className={styles.subcard}></div>
                 <div className={styles.subcard}></div>
@@ -133,7 +133,7 @@ const Dashboard: React.FC = () => {
             </div>
           </div>
 
-          <div className={styles.span1}>overview</div>
+          <div className={styles.span1}>Overall </div>
 
           <div className={styles.container2}>
             <div>
