@@ -4,12 +4,22 @@ const History = require("../models/PaymentHistory");
 router.route("/").post(async (req, res) => {
   console.log(req.body);
   try {
-    const { userID, BussinessID, txID } = req.body;
+    const {
+      senderID,
+      reciverID,
+      SendertxID,
+      RecivertxID,
+      Reciverchain,
+      Senderchain,
+    } = req.body;
 
     const history = new History({
-      userID,
-      BussinessID,
-      txID,
+      senderID,
+      reciverID,
+      SendertxID,
+      RecivertxID,
+      Reciverchain,
+      Senderchain,
     });
 
     await history.save();
@@ -21,11 +31,11 @@ router.route("/").post(async (req, res) => {
   }
 });
 
-router.route("/get/userID").post(async (req, res) => {
+router.route("/get/:senderID").post(async (req, res) => {
   try {
-    const userID = req.body.userID;
+    const { senderID } = req.params;
 
-    const Result = await History.find({ userID: { $eq: userID } });
+    const Result = await History.find({ senderID: { $eq: senderID } });
     console.log(Result);
     res.send(Result);
   } catch (err) {
@@ -34,23 +44,11 @@ router.route("/get/userID").post(async (req, res) => {
   }
 });
 
-router.route("/get/:userID").get(async (req, res) => {
+router.route("/get/:reciverID").get(async (req, res) => {
   try {
-    const { userID } = req.params;
+    const { reciverID } = req.params;
 
-    const Result = await History.find({ userID: { $eq: userID } });
-    console.log(Result);
-    res.send(Result);
-  } catch (err) {
-    console.log(err);
-    res.json(err);
-  }
-});
-router.route("/get/:BussinessID").get(async (req, res) => {
-  try {
-    const { BussinessID } = req.params;
-
-    const Result = await History.find({ BussinessID: { $eq: BussinessID } });
+    const Result = await History.find({ reciverID: { $eq: reciverID } });
     console.log(Result);
     res.send(Result);
   } catch (err) {
@@ -59,15 +57,4 @@ router.route("/get/:BussinessID").get(async (req, res) => {
   }
 });
 
-router.route("/delete/:_id").put(async (req, res) => {
-  try {
-    const { _id } = req.params;
-    console.log(_id);
-    await History.findByIdAndDelete(_id);
-    res.send({ message: "sucsses" });
-  } catch (err) {
-    console.log(err);
-    res.json(err);
-  }
-});
 module.exports = router;

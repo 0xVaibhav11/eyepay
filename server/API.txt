@@ -1,0 +1,28 @@
+for uploading nft info 
+
+http://localhost:8081/nft/  { post request}
+
+{
+    orbID => " .orb Id of user " 
+    ownerNull => "nullifierhash of owner" 
+    ZoraLink => "zora minting Link " 
+    price => "price of .orb nft "
+}
+
+
+
+for fetching who is the owner of particular id 
+
+ex. =>  Ajay.orb  
+
+http://localhost:8081/nft/?orbID=Ajay.orb  {get request }
+
+
+
+how to update if nft was updated  you have to pass the orb ID 
+
+http://localhost:8081/nft/?orbID=Ajay.orb {put request}
+
+{
+    ownerNull : "new owner of the NFt " 
+}
