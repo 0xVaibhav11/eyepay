@@ -228,6 +228,10 @@ $hero-font-size: 6rem;
       display: flex;
       justify-content: space-between;
       border-radius: 50px;
+      .paragraph {
+        padding: 0px 10% 0px 10%;
+        font-size: 17px;
+      }
     }
   }
   .section3 {
@@ -242,13 +246,17 @@ $hero-font-size: 6rem;
     .heading5 {
       font-size: 120px;
       font-weight: 700;
+
+      font-family: var(--font-migra);
+      font-style: italic;
+      text-shadow: 10px 10px 30px #f468dc;
       > h1 {
         transition: all 0.2s ease-in-out;
         line-height: 100%;
         font-family: var(--font-migra);
         font-style: italic;
         color: aqua;
-
+        text-shadow: none;
         animation-name: color-change;
         animation-duration: 5s;
         animation-iteration-count: infinite;
@@ -272,11 +280,13 @@ $hero-font-size: 6rem;
     }
     .sponsers {
       width: 70vh;
-      height: 40vh;
+      height: 30vh;
+      box-shadow: 3px 2px 30px #f468dc;
       background-color: white;
       border: 2px;
+      margin: 5%;
       display: flex;
-      border-radius: 50px;
+      border-radius: 5px;
       justify-content: center;
       place-items: center;
       align-items: center;

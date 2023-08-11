@@ -24,7 +24,6 @@ export default function Home() {
           <img
             className={styles.bggrid1}
             src="/images/assets/grid.svg"
-            priority
             alt="grid1"
             width={250}
             height={250}
@@ -32,7 +31,6 @@ export default function Home() {
           <img
             className={styles.bggrid2}
             src="/images/assets/grid2.svg"
-            priority
             alt="grid1"
             width={240}
             height={240}
@@ -41,7 +39,6 @@ export default function Home() {
           <img
             className={styles.line1}
             src="/images/assets/line2.svg"
-            priority
             alt="grid1"
             width={width / 1.3}
             height={height / 1.3}
@@ -97,10 +94,15 @@ export default function Home() {
                 <Link href="/dashboard">Dashboard</Link>
               </div>
               <div className={styles.link}>
-                <Link href="/Docs">Docs</Link>
+                <Link href="https://eyepay-vercle.gitbook.io/docs/">Docs</Link>
               </div>
               <div className={styles.link}>
-                <Link href="/app">Github</Link>
+                <Link
+                  href="https://github.com/0xVaibhav11/AstitwaFi
+                "
+                >
+                  Github
+                </Link>
               </div>
             </div>
           </div>
@@ -173,13 +175,13 @@ export default function Home() {
                 }}
                 className={styles.paragraph}
               >
-                compiled client and server successfully in 312 ms (20 modules) -
-                wait compiling... - event compiled client and server
-                successfully in 162 ms (20 modules) - wait compiling /page
-                (client and server)... - event compiled client and server
-                successfully in 3s (518 modules) - wait compiling
-                /favicon.ico/route ( client and server)... - event compiled
-                successfully in 362 ms (323 modules)
+                EyePay is the first payment gateway that uses Layer Zero and
+                Base NFTs to create a secure, fast, and affordable way to pay
+                for goods and services. With EyePay, you can pay for anything
+                with just a glance. Simply scan the QR code with your eyes and
+                your payment will be processed instantly. we are avalible in
+                multiple chains like optimisum ,base , mumbai No more fumbling
+                with credit cards or wallets
               </div>
               <Card />
             </div>
