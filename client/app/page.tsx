@@ -170,7 +170,7 @@ export default function Home() {
                 className={styles.paragraph}
               >
                 EyePay is the first payment gateway that uses Layer Zero and
-                Base NFTs to create a secure, fast, and affordable way to pay
+                world coin to create a secure, fast, and affordable way to pay
                 for goods and services. With EyePay, you can pay for anything
                 with just a glance. Simply scan the QR code with your eyes and
                 your payment will be processed instantly. we are avalible in

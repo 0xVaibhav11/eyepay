@@ -4,20 +4,15 @@ import styles from "./dashboard.module.scss";
 import { ApexOptions } from "apexcharts";
 
 import dynamic from "next/dynamic";
-// import Chart from "react-apexcharts";
 const ReactApexChart = dynamic(() => import("react-apexcharts"), {
   ssr: false,
 });
-
-// import ReactApexChart from "react-apexcharts";
 
 const Dashboard: React.FC = () => {
   const chartData = {
     options: {
       colors: ["#818cf8"],
-      chart: {
-        // type: "aria",
-      },
+      chart: {},
       dropShadow: {
         enabled: false,
         color: "#000",

@@ -95,9 +95,10 @@
 
       > thead {
         font-size: 18px;
-        color: black;
+        color: #818cf8;
         > tr {
           height: 2.8rem;
+          border-bottom: 1px solid black #e8e8e8;
           > th {
             text-align: center;
             border-bottom: 1px solid black #e8e8e8;
@@ -109,10 +110,13 @@
         font-size: 14px;
         color: black;
         > tr {
-          height: 2.8rem;
+          height: 4.8rem;
           > td {
-            border-bottom: 1.5px solid #f5f3ff;
+            border-bottom: 2.5px solid #e8e8e8;
             height: 2.8rem;
+            .chain {
+              padding-left: 1rem;
+            }
           }
         }
       }
