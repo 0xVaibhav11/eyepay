@@ -106,7 +106,7 @@ export default function NewTransection() {
   return (
     <>
       <div suppressHydrationWarning className={styles.main}>
-        {chain && <div>Connected to {chain.network}</div>}
+        {/* {chain && <div>Connected to {chain.network}</div>}
         <div>
           {" "}
           {isBalanceLoading
@@ -145,6 +145,165 @@ export default function NewTransection() {
         >
           send {tokenQty} USDC to {recipient}
         </button>
+
+        <div className={styles.heading}>New-Transaction</div>
+        <div>
+          <div className={styles.a}>
+            <div className={styles.b}>chains</div>
+          </div>
+          <hr />
+        </div> */}
+
+        <div className={styles.Transection}>
+          <div className={styles.container}>
+            <div className={styles.searchcontainer}>
+              <input className={styles.input} type="text" />
+              <svg viewBox="0 0 24 24" className={styles.searchicon}>
+                <g>
+                  <path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path>
+                </g>
+              </svg>
+            </div>
+          </div>
+          <div className={styles.cardcontainer}>
+            <div className={styles.container1}>
+              <div className={styles.searchcontainer}>
+                <div className={styles.carddiv}>
+                  <div className={styles.content1}>
+                    <div style={{ fontWeight: "bolder", marginTop: "100px" }}>
+                      {address ? address : "Connect to a wallet"}
+                    </div>
+                    <div>
+                      {connectors.map((connector) => {
+                        if (address && connector.id === activeConnector?.id)
+                          return null;
+                        return (
+                          <button
+                            style={{ padding: "12px" }}
+                            className={styles.connect}
+                            disabled={!connector.ready}
+                            key={connector.id}
+                            onClick={() => connect({ connector })}
+                          >
+                            {connector.name}
+                            {isLoading &&
+                              pendingConnector?.id === connector.id &&
+                              " (connecting)"}
+                          </button>
+                        );
+                      })}
+                    </div>
+                    <div>
+                      <span style={{ color: "black", marginTop: "10px" }}>
+                        {chain && <div>Connected to | {chain.network}</div>}
+                      </span>
+                    </div>
+                    <div>
+                      {" "}
+                      {isBalanceLoading
+                        ? "loading..."
+                        : `$${data?.formatted} ${data?.symbol}`}
+                    </div>
+                    <div>
+                      <div>
+                        <span>enter address </span>
+                        <div>
+                          <input className={styles.input1} />
+                        </div>{" "}
+                        StargateAddr:{" "}
+                        <span
+                          style={{
+                            color: "black",
+                            textAlign: "center",
+                            marginTop: "10px",
+                          }}
+                        >
+                          {stargateRouterLoading
+                            ? "loading..."
+                            : `${stargateRouterAddr}`}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className={styles.content2}>
+                    <div className={styles.data}>
+                      <div>
+                        <div className={styles.inputs}>
+                          <div>
+                            <div>
+                              select your network
+                              <br />
+                              👇
+                              <form>
+                                <select
+                                  style={{
+                                    padding: "10px 0px 10px 0px",
+                                    backgroundColor: "white",
+                                    color: "black",
+                                    borderRadius: "5px",
+                                    fontSize: "18px",
+                                  }}
+                                  className=""
+                                  name="languages"
+                                  id="lang"
+                                >
+                                  <option
+                                    style={{ padding: "10px 0px 10px 0px" }}
+                                    className=""
+                                    value="fuji"
+                                  >
+                                    fuji
+                                  </option>
+                                  <option
+                                    style={{ padding: "10px 0px 10px 0px" }}
+                                    className=""
+                                    value="mumbai"
+                                  >
+                                    mumbai
+                                  </option>
+                                  <option
+                                    style={{ padding: "10px 0px 10px 0px" }}
+                                    className=""
+                                    value="goarli"
+                                  >
+                                    goarli
+                                  </option>
+                                  <option
+                                    style={{ padding: "10px 0px 10px 0px" }}
+                                    className=""
+                                    value="optimisum gorali"
+                                  >
+                                    optimisum gorali
+                                  </option>
+                                </select>
+                              </form>
+                            </div>
+                          </div>
+                          <div>
+                            <span>enter amount </span>
+                            <div>
+                              <input className={styles.input1} />
+                            </div>
+                            <button
+                              style={{ padding: "20px" }}
+                              className={styles.button2}
+                              onClick={() => {
+                                sendToken();
+                              }}
+                            >
+                              send {tokenQty} USDC to {recipient.substr(0, 10)}
+                              ......
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
