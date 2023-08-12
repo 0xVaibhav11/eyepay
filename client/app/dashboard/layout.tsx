@@ -63,9 +63,18 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
             {/* <div className={styles.iconsdiv}>
               <MdOutlineQrCodeScanner color="#000" size={30} />
             </div> */}
-            <div className={styles.buttondiv}>
-              <button className={styles.button1}>New transection</button>
-            </div>
+
+            <Link href="/dashboard/NewTransaction">
+              <div className={styles.buttondiv}>
+                <button
+                  className={styles.button1}
+                  onClick={() => setSelected(10)}
+                >
+                  New transection
+                </button>
+              </div>
+            </Link>
+
             <div className={styles.hroizontalline}>
               <hr />
             </div>
