@@ -12,7 +12,9 @@ const Dashboard: React.FC = () => {
   const chartData = {
     options: {
       colors: ["#818cf8"],
-      chart: {},
+      chart: {
+        height: "auto",
+      },
       dropShadow: {
         enabled: false,
         color: "#000",
@@ -69,35 +71,93 @@ const Dashboard: React.FC = () => {
               <span className={styles.heading1}>Account info</span>
               <div className={styles.card1}>
                 <div className={styles.background1}>
-                  <div>
-                    <img src="./avatar.png" className={styles.avatar} />
-                  </div>
-                  <div className={styles.cardData}>
-                    <div className={styles.data}>
-                      <span
-                        style={{
-                          color: "#818cf8",
-                          padding: "12px",
-                          fontSize: "19px",
-                          fontWeight: "bold",
-                        }}
-                      >
-                        Acc Adress-
-                      </span>{" "}
-                      0x23dfgrwe33t45.....
+                  <div className={styles.arrange}>
+                    <div>
+                      <img src="./avatar.png" className={styles.avatar} />
                     </div>
-                    <div className={styles.data}>
-                      <span
-                        style={{
-                          color: "#818cf8",
-                          padding: "20px",
-                          fontSize: "19px",
-                          fontWeight: "bold",
-                        }}
-                      >
-                        amount -
-                      </span>{" "}
-                      3000 ETH
+                    <div className={styles.cardData}>
+                      <div>
+                        <div className={styles.data}>
+                          <span
+                            style={{
+                              color: "#818cf8",
+                              padding: "12px",
+                              fontSize: "19px",
+                              fontWeight: "bold",
+                            }}
+                          >
+                            UserName
+                          </span>
+                          <span
+                            style={{
+                              color: "#818cf8",
+                              padding: "15px",
+                              marginLeft: "12px",
+                              fontSize: "19px",
+                              fontWeight: "bold",
+                            }}
+                          >
+                            vnooob
+                          </span>
+                        </div>
+                        <div className={styles.data}>
+                          <span
+                            style={{
+                              color: "#818cf8",
+                              padding: "12px",
+                              fontSize: "19px",
+
+                              fontWeight: "bold",
+                            }}
+                          >
+                            Acc Adress
+                          </span>{" "}
+                          <span
+                            style={{
+                              color: "#818cf8",
+                              padding: "10px",
+                              marginRight: "3px",
+
+                              fontSize: "19px",
+                              fontWeight: "bold",
+                            }}
+                          >
+                            0x23dfgrwe33t45.....
+                          </span>
+                        </div>
+                        <div
+                          style={{
+                            padding: "12px",
+                            fontSize: "19px",
+                            fontWeight: "bold",
+                          }}
+                          className={styles.data}
+                        >
+                          <span
+                            style={{
+                              color: "#818cf8",
+                              padding: "12px",
+
+                              fontSize: "19px",
+                              fontWeight: "bold",
+                            }}
+                          >
+                            Amount
+                          </span>
+                          <span
+                            style={{
+                              color: "#818cf8",
+                              padding: "12px",
+                              marginLeft: "24px",
+                              fontSize: "19px",
+                              fontWeight: "bold",
+                            }}
+                          >
+                            3000 EWTH
+                          </span>
+                        </div>
+                        \{" "}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -137,12 +197,12 @@ const Dashboard: React.FC = () => {
                   options={chartData.options}
                   series={chartData.series}
                   type="area"
-                  height={350}
-                  width={500}
+                  height={400}
+                  width={1100}
                 />
               </div>
             </div>
-            <div className={styles.card4}></div>
+            {/* <div className={styles.card4}></div> */}
           </div>
 
           <div className={styles.span2}>Transections</div>

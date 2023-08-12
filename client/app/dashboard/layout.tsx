@@ -55,7 +55,7 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
               {/* <Image alt='avatar' className={styles.avatar} height={35} width={35} src="./images/assets/grid.svg" /> */}
 
               <RxAvatar color="#000" size={30} />
-              <div className={styles.usernamediv}>user-Name</div>
+              <div className={styles.usernamediv}>vnoob.orb</div>
             </div>
             <div>
               <hr />
