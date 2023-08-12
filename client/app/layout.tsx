@@ -1,6 +1,9 @@
 import "./globals.scss";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import React from "react";
+import { WagmiConfig } from "wagmi";
+import { config } from "./wagmiConnect";
 
 const migra = localFont({
   src: [
@@ -64,7 +67,9 @@ export default function RootLayout({
 }) {
   return (
     <html className={`${machina.variable} ${migra.variable}`} lang="en">
-      <body suppressHydrationWarning={true}>{children}</body>
+      <body suppressHydrationWarning={true}>
+        <WagmiConfig config={config}>{children}</WagmiConfig>
+      </body>
     </html>
   );
 }
