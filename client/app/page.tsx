@@ -23,14 +23,14 @@ export default function Home() {
         <div className={styles.background}>
           <img
             className={styles.bggrid1}
-            src="/images/assets/grid.svg"
+            src="/grid.svg"
             alt="grid1"
             width={250}
             height={250}
           />
           <img
             className={styles.bggrid2}
-            src="/images/assets/grid2.svg"
+            src="/grid2.svg"
             alt="grid1"
             width={240}
             height={240}
@@ -38,7 +38,7 @@ export default function Home() {
 
           <img
             className={styles.line1}
-            src="/images/assets/line2.svg"
+            src="/line2.svg"
             alt="grid1"
             width={width / 1.3}
             height={height / 1.3}
@@ -46,7 +46,7 @@ export default function Home() {
 
           {/* <Image
             priority
-            src="/images/assets/line.svg"
+            src="/line.svg"
             alt="grid1"
             width={300}
             height={300}
@@ -54,7 +54,7 @@ export default function Home() {
           />
           <Image
             priority
-            src="/images/assets/line2.svg"
+            src="/line2.svg"
             alt="grid1"
             width={300}
             height={300}
@@ -62,7 +62,7 @@ export default function Home() {
           />
           <Image
             priority
-            src="/images/assets/grid.svg"
+            src="/grid.svg"
             alt="grid1"
             width={300}
             height={300}
@@ -70,7 +70,7 @@ export default function Home() {
           />
           <Image
             priority
-            src="/images/assets/grid.svg"
+            src="/grid.svg"
             alt="grid1"
             width={300}
             height={300}
@@ -112,7 +112,7 @@ export default function Home() {
               <div className={styles.sparkle}>
                 <Image
                   priority
-                  src="/images/assets/sparkle-filled.svg"
+                  src="/sparkle-filled.svg"
                   alt="sparkle"
                   width={67}
                   height={67}
@@ -127,7 +127,7 @@ export default function Home() {
               <div className={styles.arrow}>
                 <Image
                   priority
-                  src="/images/assets/arrow.svg"
+                  src="/arrow.svg"
                   alt="arrow"
                   width={155}
                   height={88}
@@ -138,7 +138,7 @@ export default function Home() {
               <div className={styles.sparkle}>
                 <Image
                   priority
-                  src="/images/assets/sparkle-outline.svg"
+                  src="/sparkle-outline.svg"
                   alt="sparkle"
                   width={67}
                   height={67}
@@ -197,7 +197,7 @@ export default function Home() {
               by
               <Image
                 priority
-                src="/images/assets/sparkle-outline.svg"
+                src="/sparkle-outline.svg"
                 alt="sparkle"
                 width={67}
                 height={67}
