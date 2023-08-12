@@ -157,12 +157,6 @@ export default function Home() {
           </div>
         </div>
         <div className={styles.section2}>
-          <div className={styles.threed}>
-            <SplineViewer
-              // url="https://prod.spline.design/FVZWbQH2B6ndj9UU/scene.splinecode"
-              eventsTarget="global"
-            />
-          </div>
           <div>
             <div className={styles.card1}>
               <div

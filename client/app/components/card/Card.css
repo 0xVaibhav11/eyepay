@@ -1,66 +1,61 @@
-
-
-
 .card1 {
-    position: relative;
-    width: 80vh;
-    height: 70vh;
-    background-color: #1a181f;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    padding: 12px;
-    gap: 12px;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-  
-  .card1::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    left: -5px;
-    margin: auto;
-    width: 50 vh;
-    height: 70vh;
-    border-radius: 10px;
-    background: linear-gradient(-45deg, #F468DC 0%, #7718e4 100% );
-    z-index: -10;
-    pointer-events: none;
-    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.175);
-  }
-  
-  .card1::after {
-    content: "";
-    z-index: -1;
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(-45deg, #F468DC 0%, #7718e3 100% );
-    transform: translate3d(0, 0, 0) scale(0.95);
-    filter: blur(20px);
-  }
-  
-  .heading {
-    font-size: 20px;
-    text-transform: capitalize;
-    font-weight: 700;
-  }
-  
-  .card1 p:not(.heading) {
-    font-size: 14px;
-  }
-  
-  .card1 p:last-child {
-    color: #e81cff;
-    font-weight: 600;
-  }
-  
-  .card1:hover::after {
-    filter: blur(30px);
-  }
-  
-  .card1:hover::before {
-    transform: rotate(-90deg) scaleX(1.34) scaleY(1.2);
-  }
-  
-  
+  position: relative;
+  width: 80vh;
+  height: 70vh;
+  background-color: #1a181f;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 12px;
+  gap: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.card1::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  left: -5px;
+  margin: auto;
+  width: 50 vh;
+  height: 70vh;
+  border-radius: 10px;
+  background: linear-gradient(-45deg, #f468dc 0%, #7718e4 100%);
+  z-index: -10;
+  pointer-events: none;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.175);
+}
+
+.card1::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-45deg, #f468dc 0%, #7718e3 100%);
+  transform: translate3d(0, 0, 0) scale(0.95);
+  filter: blur(20px);
+}
+
+.heading {
+  font-size: 20px;
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
+.card1 p:not(.heading) {
+  font-size: 14px;
+}
+
+.card1 p:last-child {
+  color: #e81cff;
+  font-weight: 600;
+}
+
+.card1:hover::after {
+  filter: blur(30px);
+}
+
+.card1:hover::before {
+  transform: rotate(-90deg) scaleX(1.34) scaleY(1.2);
+}

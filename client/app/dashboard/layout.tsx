@@ -34,12 +34,12 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
       icon: SiWikidata,
     },
     {
-      path: "/dashboard/Transection",
+      path: "/dashboard/txs",
       name: "Transection",
       icon: BiTransfer,
     },
     {
-      path: "/dashboard/Assets",
+      path: "/dashboard/assets",
       name: "Assets",
       icon: AiOutlineAppstoreAdd,
     },
@@ -64,13 +64,13 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
               <MdOutlineQrCodeScanner color="#000" size={30} />
             </div> */}
 
-            <Link href="/dashboard/NewTransaction">
+            <Link href="/dashboard/payto">
               <div className={styles.buttondiv}>
                 <button
                   className={styles.button1}
                   onClick={() => setSelected(10)}
                 >
-                  New transection
+                  Pay to user
                 </button>
               </div>
             </Link>
@@ -81,28 +81,24 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
             <div className={styles.siebarItems}>
               {sideBarItems.map((item, index) => {
                 return (
-                  <>
-                    <Link href={item.path}>
-                      <div
-                        className={
-                          selected === index
-                            ? ` ${styles.items}`
-                            : ` ${styles.items1}`
-                        }
-                        key={index}
-                        onClick={() => setSelected(index)}
-                      >
-                        <item.icon size={23} className={styles.icons1} />
-                        <span>{item.name}</span>
-                      </div>
-                    </Link>
-                  </>
+                  <Link key={item.name} href={item.path}>
+                    <div
+                      className={
+                        selected === index
+                          ? ` ${styles.items}`
+                          : ` ${styles.items1}`
+                      }
+                      onClick={() => setSelected(index)}
+                    >
+                      <item.icon size={23} className={styles.icons1} />
+                      <span>{item.name}</span>
+                    </div>
+                  </Link>
                 );
               })}
             </div>
           </div>
         </div>
-
         <section className={styles.content}>{children}</section>
       </main>
     </>
