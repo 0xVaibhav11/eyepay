@@ -22,6 +22,7 @@ type a = {
 
 export default function Dashboard({ children }: { children: React.ReactNode }) {
   const [selected, setSelected] = useState(1);
+  const [selected1, setSelected1] = useState(false);
   const sideBarItems: Array<a> = [
     {
       path: "/",
@@ -67,8 +68,15 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
             <Link href="/dashboard/NewTransaction">
               <div className={styles.buttondiv}>
                 <button
-                  className={styles.button1}
-                  onClick={() => setSelected(10)}
+                  className={
+                    selected1 === true
+                      ? ` ${styles.button1}`
+                      : ` ${styles.button2}`
+                  }
+                  onClick={() => {
+                    setSelected(10);
+                    setSelected1(true);
+                  }}
                 >
                   New transection
                 </button>
@@ -90,7 +98,10 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
                             : ` ${styles.items1}`
                         }
                         key={index}
-                        onClick={() => setSelected(index)}
+                        onClick={() => {
+                          setSelected(index);
+                          setSelected1(false);
+                        }}
                       >
                         <item.icon size={23} className={styles.icons1} />
                         <span>{item.name}</span>

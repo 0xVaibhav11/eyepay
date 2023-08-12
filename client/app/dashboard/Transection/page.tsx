@@ -23,9 +23,11 @@ export default function Transection() {
           <table>
             <thead>
               <tr>
+                <th>sender</th>
                 <th>Amount</th>
                 <th>Order id</th>
-                <th>chain</th>
+                <th> sending chain</th>
+                <th> receving chain</th>
                 <th>status</th>
               </tr>
             </thead>
@@ -35,6 +37,8 @@ export default function Transection() {
                 <td>30</td>
                 <td>1172478989</td>
                 <td>zora</td>
+                <td>optimisum</td>
+                <td>optimisum</td>
                 <td>success</td>
               </tr>
               <tr>
@@ -42,8 +46,12 @@ export default function Transection() {
                 <td>drone</td>
                 <td>drone</td>
                 <td>drone</td>
+                <td>drone</td>
+                <td>drone</td>
               </tr>
               <tr>
+                <td>drone</td>
+                <td>drone</td>
                 <td>drone</td>
                 <td>drone</td>
                 <td>drone</td>

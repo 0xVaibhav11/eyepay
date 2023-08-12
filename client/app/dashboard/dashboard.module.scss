@@ -49,16 +49,15 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      .button1 {
+      .button2 {
         height: 50px;
         border: dashed 2px #818cf8;
         background-color: white;
         border-radius: 16px;
-        font-size: 15px;
+        font-size: 18px;
         margin: 8px;
         width: calc(100% - 1em);
         color: #818cf8;
-
         cursor: pointer;
         justify-content: center;
         place-items: center;
@@ -67,6 +66,20 @@
           color: white;
           border: none;
         }
+      }
+      .button1 {
+        height: 50px;
+        border-radius: 16px;
+        font-size: 18px;
+        font-weight: 600;
+        margin: 8px;
+        width: calc(100% - 1em);
+        cursor: pointer;
+        justify-content: center;
+        place-items: center;
+        background-color: #818cf8;
+        color: white;
+        border: none;
       }
     }
 
