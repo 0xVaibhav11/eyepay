@@ -6,11 +6,19 @@
   gap: 2rem;
   align-items: center;
   justify-content: center;
-  color: red;
+  color: black;
+
+  .chains {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    color: black;
+  }
 
   .paybtn {
     padding: 5px 5%;
-    background-color: black;
+    background-color: pink;
     border-radius: 3px;
     border: none;
     font-size: 2rem;

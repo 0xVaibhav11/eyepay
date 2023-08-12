@@ -1,4 +1,3 @@
-"use client";
 import "./globals.scss";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
