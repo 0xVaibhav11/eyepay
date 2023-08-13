@@ -55,15 +55,15 @@ export default function NewTransection() {
       console.log("success", txHash);
     },
   });
-  // const {
-  //   data: stargateRouterAddr,
-  //   isError: stargateRouterError,
-  //   isLoading: stargateRouterLoading,
-  // } = useContractRead({
-  //   address: `0x${contractAddr}`,
-  //   abi: getUAappAbi(chain?.network as string),
-  //   functionName: "stargateRouter",
-  // });
+  const {
+    data: stargateRouterAddr,
+    isError: stargateRouterError,
+    isLoading: stargateRouterLoading,
+  } = useContractRead({
+    address: `0x${contractAddr}`,
+    abi: getUAappAbi(chain?.network as string),
+    functionName: "stargateRouter",
+  });
 
   //usdc approve
   const { write: usdcApprove } = useContractWrite({
