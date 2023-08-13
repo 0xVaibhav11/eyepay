@@ -70,11 +70,6 @@ const Transection: React.FC = () => {
                     <tr>
                       <td>{tsx.transaction_hash}</td>
                       <td>
-                        <img
-                          src="../public/hyperlane.png"
-                          alt=""
-                          width="25px"
-                        />
                         {`${tsx.from.substr(0, 8)}......${tsx.from.substr(
                           34,
                           42
