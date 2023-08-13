@@ -23,6 +23,21 @@ export function getUAappAddr(network: string) {
     return contracts.optimismGoerli.address;
   }
 }
+export function getDstChainID(network: string) {
+  if (network === "avalanche-fuji") {
+    return 10106;
+  }
+  if (network === "goerli") {
+    return 10121;
+  }
+  if (network === "maticmum") {
+    return 10109;
+  }
+  if (network === "optimism-goerli") {
+    return 10132;
+  }
+}
+
 export function getUAappAbi(network: string) {
   if (network === "avalanche-fuji") {
     return contracts.fuji.abi;

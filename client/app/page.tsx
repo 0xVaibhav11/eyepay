@@ -7,7 +7,6 @@ import { useDeviceSize } from "./components/useDeviceSize";
 
 import { SplineViewer } from "./components/Threed";
 import Button from "./components/Button/Button";
-import Card from "./components/card/Card";
 import base from "../public/sponserpngs/base.png";
 
 const LOGO_WIDTH = 432;
@@ -43,39 +42,6 @@ export default function Home() {
             width={width / 1.3}
             height={height / 1.3}
           />
-
-          {/* <Image
-            priority
-            src="/line.svg"
-            alt="grid1"
-            width={300}
-            height={300}
-            className={styles.bggrid2}
-          />
-          <Image
-            priority
-            src="/line2.svg"
-            alt="grid1"
-            width={300}
-            height={300}
-            className={styles.line}
-          />
-          <Image
-            priority
-            src="/grid.svg"
-            alt="grid1"
-            width={300}
-            height={300}
-            className={styles.sparkleFilled}
-          />
-          <Image
-            priority
-            src="/grid.svg"
-            alt="grid1"
-            width={300}
-            height={300}
-            className={styles.sparkleOutlined}
-          /> */}
         </div>
         <div className={styles.header}>
           <div className={styles.nav}>
@@ -150,40 +116,49 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className={styles.getStartedbutton}>
-            <div>
+        </div>
+        <div className={styles.getstarted}>
+          <div className={styles.para}>
+            First payment gateway that uses Layer Zero and World coin to create
+            a secure & fast way to pay your friends and others.
+          </div>
+          <div className={styles.right}>
+            <Link href="/signup">
               <Button />
-            </div>
+            </Link>
           </div>
         </div>
         <div className={styles.section2}>
-          <div>
-            <div className={styles.card1}>
-              <div
-                style={{
-                  fontSize: "20px",
-                  display: "flex",
-                  justifyContent: "center",
-                  placeItems: "center",
-                  color: "black",
-                }}
-                className={styles.paragraph}
-              >
-                EyePay is the first payment gateway that uses Layer Zero and
-                world coin to create a secure, fast, and affordable way to pay
-                for goods and services. With EyePay, you can pay for anything
-                with just a glance. Simply scan the QR code with your eyes and
-                your payment will be processed instantly. we are avalible in
-                multiple chains like optimisum ,base , mumbai No more fumbling
-                with credit cards or wallets
+          <div className={styles.inner}>
+            <div className={styles.top}>
+              <div className={styles.left}>
+                <div className={styles.heading}>What does</div>
+                <div className={styles.subheading}>Eyepay</div>
+                <div className={styles.subheading2}>do?</div>
+                <div className={styles.sparkle}>
+                  <Image
+                    priority
+                    src="/sparkle-outline.svg"
+                    alt="sparkle"
+                    width={67}
+                    height={67}
+                  />
+                </div>
               </div>
-              <Card />
+              <div className={styles.right}>
+                EyePay is the first payment gateway that uses Layer Zero and
+                World coin to create a secure & fast way to pay your friends and
+                others.
+              </div>
+            </div>
+            <div className={styles.ss}>
+              <img src="/Images/ss.png" alt="ss" />
             </div>
           </div>
         </div>
-        <div className={styles.section3}>
+        {/* <div className={styles.section3}>
           <div className={styles.heading5}>
-            sponsered
+            Powered
             <h1
               style={{ transform: "rotate(-24deg)" }}
               className={styles.span1}
@@ -246,7 +221,7 @@ export default function Home() {
               />
             </div>
           </div>
-        </div>
+        </div> */}
       </main>
     </>
   );

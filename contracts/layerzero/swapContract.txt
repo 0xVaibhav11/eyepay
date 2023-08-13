@@ -1,0 +1,36 @@
+[optimism-goerli] Stargate Router address: 0x95461eF0e0ecabC049a5c4a6B98Ca7B335FAF068
+deploying "StargateSwap" (tx: 0x86a8b99a7d6c395bd366770924b26fd3938e889743408e4acbba3a37bbc35b7e)...
+: deployed at 0x5c25Dd7960Ed6e75b6a417d565b047093BE7ed01 with 723221 gas
+
+[goerli] Stargate Router address: 0x7612aE2a34E5A363E137De748801FB4c86499152
+deploying "StargateSwap" (tx: 0xc11bdff9b9bcb9ccb95a87658eb1bfa5849e973d28556386c8b505933a28e0a1)...
+: deployed at 0xB583DB8A4396E4858e29E97d6a6abD6bD0C28209 with 723421 gas
+
+[mumbai] Stargate Router address: 0x817436a076060D158204d955E5403b6Ed0A5fac0
+deploying "StargateSwap" (tx: 0x0dffec0a71b932bbfba78d5dafca38cb4d9e82ef525717515eb80b2db9f158e3)...
+: deployed at 0x045b7Dc397F30b28FDe29496acf7edc8A4588Aca with 723221 gas
+
+[fuji] Stargate Router address: 0x13093E05Eb890dfA6DacecBdE51d24DabAb2Faa1
+deploying "StargateSwap" (tx: 0x14364db3735faf2a1c32e2a269b81f4f6a4114c577053597a060a86d7003a556)...
+: deployed at 0x2Db09b54E67824f295A6885Ceb735ca0785F7F32 with 723221 gas
+
+sucssefully deployed StargateSwap to all networks
+```
+
+
+
+sucssefull txs:
+{
+  bridgeToken: '0xDf0360Ad8C5ccf25095Aa97ee5F2785c8d848620',
+  dstPoolId: '1',
+  qty: '100000000',
+  srcPoolId: '1',
+  targetNetwork: 'mumbai'
+}
+[goerli] ERC20: 0xDf0360Ad8C5ccf25095Aa97ee5F2785c8d848620
+[goerli] StargateSwap: 0xB583DB8A4396E4858e29E97d6a6abD6bD0C28209
+[mumbai] StargateSwap: 0x045b7Dc397F30b28FDe29496acf7edc8A4588Aca
+[goerli] approve tx: 0xc87ba78e493ff0d5804451def8dcebf883bb2f15e9193068ff0ef1082fd12fef
+[goerli] StargateRouter: 0x7612aE2a34E5A363E137De748801FB4c86499152
+[goerli] Stargate fee: 7119025835561 wei
+tx: 0x5745cd1b62352815ffa1812e17a5ba8123c993b09cc9745af0c14abd51555fd9

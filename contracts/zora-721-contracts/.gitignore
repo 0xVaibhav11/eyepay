@@ -1,0 +1,15 @@
+artifacts
+node_modules
+cache
+*.private.json
+./networks.private.json
+.DS_Store
+.env
+.pkey
+.env.*
+dist/
+out/
+.idea
+broadcast/
+package/wagmiGenerated.ts
+package/chainConfigs.ts

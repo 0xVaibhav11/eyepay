@@ -1,7 +1,8 @@
 @import "../variables.scss";
+
 .main {
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -18,6 +19,7 @@
     width: 100%;
     height: 100%;
   }
+
   .card1 {
     height: 100%;
     width: 50%;
@@ -25,6 +27,7 @@
     flex-direction: column;
     justify-content: center;
     place-items: center;
+
     .spline1 {
       height: auto;
       width: 80%;
@@ -39,6 +42,7 @@
     flex-direction: column;
     justify-content: center;
     place-items: center;
+
     .card {
       width: 50%;
       height: 70%;
@@ -82,11 +86,9 @@
         content: "";
         position: absolute;
         width: 100px;
-        background-image: linear-gradient(
-          180deg,
-          rgb(0, 183, 255),
-          rgb(255, 48, 255)
-        );
+        background-image: linear-gradient(180deg,
+            rgb(0, 183, 255),
+            rgb(255, 48, 255));
         height: 130%;
         animation: rotBGimg 3s linear infinite;
         transition: all 0.2s linear;
@@ -101,6 +103,7 @@
         border-radius: 15px;
       }
     }
+
     @keyframes rotBGimg {
       from {
         transform: rotate(0deg);
@@ -131,11 +134,9 @@
     top: 50%;
     // width: 100px;
     height: 2px;
-    background: linear-gradient(
-      -45deg,
-      rgba(95, 145, 255, 1),
-      rgba(0, 0, 255, 0)
-    );
+    background: linear-gradient(-45deg,
+        rgba(95, 145, 255, 1),
+        rgba(0, 0, 255, 0));
     border-radius: 999px;
     filter: drop-shadow(0 0 6px rgba(105, 155, 255, 1));
     animation: tail $shooting-time ease-in-out infinite,
@@ -148,12 +149,10 @@
       right: 0;
       // width: 30px;
       height: 2px;
-      background: linear-gradient(
-        -45deg,
-        rgba(0, 0, 255, 0),
-        rgba(95, 145, 255, 1),
-        rgba(0, 0, 255, 0)
-      );
+      background: linear-gradient(-45deg,
+          rgba(0, 0, 255, 0),
+          rgba(95, 145, 255, 1),
+          rgba(0, 0, 255, 0));
       transform: translateX(50%) rotateZ(45deg);
       border-radius: 100%;
       animation: shining $shooting-time ease-in-out infinite;
@@ -169,12 +168,10 @@
       right: 0;
       // width: 30px;
       height: 2px;
-      background: linear-gradient(
-        -45deg,
-        rgba(0, 0, 255, 0),
-        rgba(95, 145, 255, 1),
-        rgba(0, 0, 255, 0)
-      );
+      background: linear-gradient(-45deg,
+          rgba(0, 0, 255, 0),
+          rgba(95, 145, 255, 1),
+          rgba(0, 0, 255, 0));
       transform: translateX(50%) rotateZ(45deg);
       border-radius: 100%;
       animation: shining $shooting-time ease-in-out infinite;
@@ -183,7 +180,7 @@
 
     @for $i from 1 through 200 {
       &:nth-child(#{$i}) {
-        $delay: random(9999) + 0ms;
+        $delay: random(9999)+0ms;
         top: calc(100% - #{random(1900) - 200px});
         left: calc(60% - #{random(1200) + 0px});
         animation-delay: $delay;

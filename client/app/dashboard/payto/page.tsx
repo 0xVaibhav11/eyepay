@@ -15,19 +15,18 @@ import {
   getUAappAddr,
   getUAappAbi,
   getUsdcAddress,
+  getDstChainID,
 } from "../../contracts/contracts";
 
 export default function NewTransection() {
   const [mounted, setMounted] = useState(false);
   const [tokenQty, setTokenQty] = useState(10);
-  const [dstChainId, setDstChainId] = useState(10106);
-  const [recipient, setRecipient] = useState(
-    "0x3C9eAA58eC0Eb82D138FcE5ee1C649aD4B48a809"
-  );
+  const [recipient, setRecipient] = useState("0x00000");
+  const [dstChain, setDstChain] = useState("avalanche-fuji");
+  const [dstChainId, setDstChainId] = useState(getDstChainID(dstChain));
   const [dstUAappAddr, setDstUAappAddr] = useState(
-    "0x2Db09b54E67824f295A6885Ceb735ca0785F7F32"
+    getUAappAddr(dstChain) as string
   );
-  const [fees, setFees] = useState(ethers.parseEther("0.025"));
 
   useEffect(() => {
     setMounted(true);
@@ -52,8 +51,8 @@ export default function NewTransection() {
     address: `0x${contractAddr}`,
     abi: getUAappAbi(chain?.network as string),
     functionName: "swap",
-    onSuccess(data) {
-      console.log("success", data);
+    onSuccess(txHash) {
+      console.log("success", txHash);
     },
   });
   const {
@@ -71,12 +70,6 @@ export default function NewTransection() {
     address: getUsdcAddress(chain?.network as string),
     abi: erc20ABI,
     functionName: "approve",
-  });
-  const { data: usdcAllowance } = useContractRead({
-    address: getUsdcAddress(chain?.network as string),
-    abi: erc20ABI,
-    functionName: "allowance",
-    args: [`0x${address?.split("x")[1]}`, `0x${contractAddr}`],
   });
 
   async function sendToken() {
@@ -131,11 +124,6 @@ export default function NewTransection() {
         })}
         {error && <div>{error.message}</div>}
         <div> {address ? address : "Connect to a wallet"}</div>
-        <div>
-          {" "}
-          StargateAddr:{" "}
-          {stargateRouterLoading ? "loading..." : `${stargateRouterAddr}`}
-        </div>
 
         <button
           onClick={() => {
