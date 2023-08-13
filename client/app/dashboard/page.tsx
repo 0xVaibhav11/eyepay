@@ -4,6 +4,7 @@ import styles from "./dashboard.module.scss";
 import { ApexOptions } from "apexcharts";
 
 import dynamic from "next/dynamic";
+import Link from "next/link";
 const ReactApexChart = dynamic(() => import("react-apexcharts"), {
   ssr: false,
 });
@@ -75,90 +76,79 @@ const Dashboard: React.FC = () => {
                     <div>
                       <img src="./avatar.png" className={styles.avatar} />
                     </div>
-                    <div className={styles.cardData}>
-                      <div>
-                        <div className={styles.data}>
-                          <span
-                            style={{
-                              color: "#818cf8",
-                              padding: "12px",
-                              fontSize: "19px",
-                              fontWeight: "bold",
-                            }}
-                          >
-                            UserName
-                          </span>
-                          <span
-                            style={{
-                              color: "#818cf8",
-                              padding: "15px",
-                              marginLeft: "12px",
-                              fontSize: "19px",
-                              fontWeight: "bold",
-                            }}
-                          >
-                            vnooob
-                          </span>
-                        </div>
-                        <div className={styles.data}>
-                          <span
-                            style={{
-                              color: "#818cf8",
-                              padding: "12px",
-                              fontSize: "19px",
 
-                              fontWeight: "bold",
-                            }}
-                          >
-                            Acc Adress
-                          </span>{" "}
-                          <span
-                            style={{
-                              color: "#818cf8",
-                              padding: "10px",
-                              marginRight: "3px",
-
-                              fontSize: "19px",
-                              fontWeight: "bold",
-                            }}
-                          >
-                            0x23dfgrwe33t45.....
-                          </span>
-                        </div>
-                        <div
+                    <table
+                      style={{
+                        padding: "25px",
+                      }}
+                    >
+                      <tr>
+                        <td
                           style={{
-                            padding: "12px",
+                            color: "#818cf8",
+                            padding: "5px",
                             fontSize: "19px",
                             fontWeight: "bold",
                           }}
-                          className={styles.data}
                         >
-                          <span
-                            style={{
-                              color: "#818cf8",
-                              padding: "12px",
-
-                              fontSize: "19px",
-                              fontWeight: "bold",
-                            }}
-                          >
-                            Amount
-                          </span>
-                          <span
-                            style={{
-                              color: "#818cf8",
-                              padding: "12px",
-                              marginLeft: "24px",
-                              fontSize: "19px",
-                              fontWeight: "bold",
-                            }}
-                          >
-                            3000 EWTH
-                          </span>
-                        </div>
-                        \{" "}
-                      </div>
-                    </div>
+                          User name
+                        </td>
+                        <td
+                          style={{
+                            color: "white",
+                            padding: "5px",
+                            fontSize: "19px",
+                            fontWeight: "bold",
+                          }}
+                        >
+                          vanoob
+                        </td>
+                      </tr>
+                      <tr>
+                        <td
+                          style={{
+                            color: "#818cf8",
+                            padding: "5px",
+                            fontSize: "19px",
+                            fontWeight: "bold",
+                          }}
+                        >
+                          Account address
+                        </td>
+                        <td
+                          style={{
+                            color: "white",
+                            padding: "5px",
+                            fontSize: "19px",
+                            fontWeight: "bold",
+                          }}
+                        >
+                          0x434056u5
+                        </td>
+                      </tr>
+                      <tr>
+                        <td
+                          style={{
+                            color: "#818cf8",
+                            padding: "5px",
+                            fontSize: "19px",
+                            fontWeight: "bold",
+                          }}
+                        >
+                          Amount
+                        </td>
+                        <td
+                          style={{
+                            color: "white",
+                            padding: "5px",
+                            fontSize: "19px",
+                            fontWeight: "bold",
+                          }}
+                        >
+                          3000 Eth
+                        </td>
+                      </tr>
+                    </table>
                   </div>
                 </div>
 
@@ -169,21 +159,32 @@ const Dashboard: React.FC = () => {
                       fontSize: "16px",
                       padding: "12px",
                     }}
-                  >
-                    Tokens - 0
-                  </div>
+                  ></div>
                   <div className={styles.buttonDiv}>
-                    <button className={styles.button}>View Assets</button>
+                    <Link href="/dashboard/assets">
+                      <button className={styles.button}>View Assets</button>
+                    </Link>
                   </div>
                 </div>
               </div>
             </div>
             <div>
-              <span className={styles.heading2}>about</span>
+              <span className={styles.heading2}>Recent Transection's</span>
               <div className={styles.card2}>
-                <div className={styles.subcard}></div>
-                <div className={styles.subcard}></div>
-                <div className={styles.subcard}></div>
+                <div className={styles.subcard}>
+                  <div className={styles.a}>30</div>
+                  <div>0x2333dflk3erj3q2....</div>
+                </div>
+                <div className={styles.subcard}>
+                  {" "}
+                  <div className={styles.a}>30</div>
+                  <div>0x2333dflk3erj3q2....</div>
+                </div>
+                <div className={styles.subcard}>
+                  {" "}
+                  <div className={styles.a}>30</div>
+                  <div>0x5833dflk3erj3q2....</div>
+                </div>
               </div>
             </div>
           </div>
@@ -203,47 +204,6 @@ const Dashboard: React.FC = () => {
               </div>
             </div>
             {/* <div className={styles.card4}></div> */}
-          </div>
-
-          <div className={styles.span2}>Transections</div>
-          <div className={styles.container3}>
-            <div className={styles.Transection}>
-              <h2>2 aug 4:30 pm</h2>
-              <table>
-                <thead>
-                  <tr>
-                    <th>Amount</th>
-                    <th>Order id</th>
-                    <th>chain</th>
-                    <th>status</th>
-                  </tr>
-                </thead>
-
-                <tbody>
-                  <tr>
-                    <td>30</td>
-                    <td>1172478989</td>
-                    <td>zora</td>
-                    <td>success</td>
-                  </tr>
-                  <tr>
-                    <td>drone</td>
-                    <td>drone</td>
-                    <td>drone</td>
-                    <td>drone</td>
-                  </tr>
-                  <tr>
-                    <td>drone</td>
-                    <td>drone</td>
-                    <td>drone</td>
-                    <td>drone</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            {/* <div className={styles.card5}></div>
-            <div style={{ marginLeft: "25px" }} className={styles.card5}></div>
-            <div style={{ marginLeft: "25px" }} className={styles.card5}></div> */}
           </div>
         </div>
       </div>

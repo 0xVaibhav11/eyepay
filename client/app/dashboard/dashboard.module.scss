@@ -204,11 +204,12 @@
           .arrange {
             display: flex;
             flex-direction: row;
+            align-items: center;
             justify-content: center;
             gap: 5vh;
             .avatar {
               vertical-align: middle;
-              margin-top: 2vh;
+
               width: 80px;
               height: 80px;
               border-radius: 20%;
@@ -291,12 +292,21 @@
 
         .subcard {
           width: 73vh;
-
+          font-size: 19px;
+          font-weight: 700;
           height: 10.1vh;
+          color: white;
           background-color: #c7d2fe;
           border: 2px;
           border-radius: 10px;
-
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 4rem;
+          flex-direction: row;
+          .a {
+            color: #818cf8;
+          }
           &:hover {
             transform: translateY(-1px);
           }
