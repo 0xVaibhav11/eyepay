@@ -1,11 +1,9 @@
 "use client";
 import styles from "./page.module.scss";
 import React from "react";
-import { useState } from "react";
 import axios from "axios";
 import { SplineViewer } from "../components/Threed";
 import { IDKitWidget, ISuccessResult } from "@worldcoin/idkit";
-import Spline from "@splinetool/react-spline";
 
 export default function LoginWithWorldcoin() {
   let onSuccess = (data: any) => {
