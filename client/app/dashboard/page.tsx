@@ -9,7 +9,7 @@ const ReactApexChart = dynamic(() => import("react-apexcharts"), {
   ssr: false,
 });
 
-const Dashboard: React.FC = () => {
+export default function Dashboard() {
   const chartData = {
     options: {
       colors: ["#818cf8"],
@@ -169,7 +169,7 @@ const Dashboard: React.FC = () => {
               </div>
             </div>
             <div>
-              <span className={styles.heading2}>Recent Transection's</span>
+              <span className={styles.heading2}>Recent Transection&apos;s</span>
               <div className={styles.card2}>
                 <div className={styles.subcard}>
                   <div className={styles.a}>30</div>
@@ -209,6 +209,4 @@ const Dashboard: React.FC = () => {
       </div>
     </>
   );
-};
-
-export default Dashboard;
+}
