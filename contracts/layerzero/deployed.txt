@@ -1,0 +1,34 @@
+your address: 0xe159251810d23623a64Adb495648e44730bdfA27
+
+[optimism-goerli] Endpoint Address: 0xae92d5aD7583AD66E49A0c67BAd18F6ba52dDDc1
+deploying "ExampleOFTV2" (tx: 0x96e2913b0cc1ddd1796b9313abd256609afdf5371126269bc29a5526f3d938ae)...
+: deployed at 0x87FD67F1C1482f6C62eC296B51dc518bcDe56793 with 3884546 gas
+
+✅ [optimism-goerli] setTrustedRemote(10109, 0xa9210b3a8d433e6e3a93a616545153a32877876387fd67f1c1482f6c62ec296b51dc518bcde56793)
+ tx: 0x401979b3470a05ae86cd02274971d105065e6e27855b52200587437345400acc
+
+✅ [optimism-goerli] setTrustedRemote(10160, 0xb583db8a4396e4858e29e97d6a6abd6bd0c2820987fd67f1c1482f6c62ec296b51dc518bcde56793)
+ tx: 0x0689841213bf8a602f11184771abea72a9c9f8a7de0b78c4f8420f5fa68bbca1
+
+ -------------------------------------------------------------------------------------------
+
+[base-goerli] Endpoint Address: 0x6aB5Ae6822647046626e83ee6dB8187151E1d5ab
+deploying "ExampleOFTV2" (tx: 0x3d82f83e4f23dc52a174e0284e726d4f1bdd3ca02934ca3e4629ac61a7d4a923)...: deployed at 0xB583DB8A4396E4858e29E97d6a6abD6bD0C28209 with 3884546 gas
+
+✅ [base-goerli] setTrustedRemote(10132, 0x87fd67f1c1482f6c62ec296b51dc518bcde56793b583db8a4396e4858e29e97d6a6abd6bd0c28209)
+ tx: 0x970a533eaeb362a6bcab5c5e11ee9f98a65c8ecd7f77e3ace642b7b5b1b274d9
+
+✅ [base-goerli] setTrustedRemote(10109, 0xa9210b3a8d433e6e3a93a616545153a328778763b583db8a4396e4858e29e97d6a6abd6bd0c28209)
+ tx: 0xa9e98dbb3433fd657ab8a3b74ad0fa18a60bf5ced0dde38b85dda3e3f7a8a6a4
+
+---------------------------------------------------------------------------------------------
+
+[mumbai] Endpoint Address: 0xf69186dfBa60DdB133E91E9A4B5673624293d8F8
+deploying "ExampleOFTV2" (tx: 0x58751fc28e9c231d1433ad72660f381c54f8e006ea6868065ba05b694559ae95)...
+: deployed at 0xA9210b3A8D433e6e3a93a616545153a328778763 with 3884546 gas
+
+✅ [mumbai] setTrustedRemote(10132, 0x87fd67f1c1482f6c62ec296b51dc518bcde56793a9210b3a8d433e6e3a93a616545153a328778763)
+ tx: 0xa943eb8855e046e0321cda03bc32b152299263e40ad4b873f9b13bbca2e76d11
+
+✅ [mumbai] setTrustedRemote(10160,0xb583db8a4396e4858e29e97d6a6abd6bd0c28209a9210b3a8d433e6e3a93a616545153a328778763)
+ tx: 0xeb01b0b5755f1d65cc27542d92a85cb83723ba4d263ded7744ab9366ec5b9d18
