@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ethereum-attestation-service/eas-sdk": "^1.1.0-beta.1",
     "@splinetool/react-spline": "^2.2.6",
     "@splinetool/runtime": "^0.9.414",
     "@types/node": "^20.4.8",
@@ -16,6 +17,7 @@
     "@types/react-dom": "18.2.7",
     "@wagmi/chains": "^1.7.0",
     "@worldcoin/idkit": "^0.5.1",
+    "@zoralabs/zora-721-contracts": "^1.14.1",
     "apexcharts": "^3.41.1",
     "axios": "^1.4.0",
     "eslint": "8.46.0",
@@ -27,6 +29,7 @@
     "react-dom": "18.2.0",
     "react-icon": "^1.0.0",
     "react-icons": "^4.10.1",
+    "revise-sdk": "^0.2.0",
     "sass": "^1.64.2",
     "typescript": "5.1.6",
     "viem": "^1.6.0",
