@@ -22,9 +22,7 @@ export default function NewTransection() {
   const [tokenQty, setTokenQty] = useState<number>(10);
   const [dstChainId, setDstChainId] = useState<number>(10106);
 
-  const [recipient, setRecipient] = useState(
-    "0x3C9eAA58eC0Eb82D138FcE5ee1C649aD4B48a809"
-  );
+  const [recipient, setRecipient] = useState("...");
   const [dstUAappAddr, setDstUAappAddr] = useState(
     "0x2Db09b54E67824f295A6885Ceb735ca0785F7F32"
   );
@@ -72,12 +70,6 @@ export default function NewTransection() {
     address: getUsdcAddress(chain?.network as string),
     abi: erc20ABI,
     functionName: "approve",
-  });
-  const { data: usdcAllowance } = useContractRead({
-    address: getUsdcAddress(chain?.network as string),
-    abi: erc20ABI,
-    functionName: "allowance",
-    args: [`0x${address?.split("x")[1]}`, `0x${contractAddr}`],
   });
 
   async function sendToken() {
@@ -188,23 +180,6 @@ export default function NewTransection() {
                             />
                           </div>{" "}
                         </div>
-
-                        <span
-                          style={{
-                            color: "black",
-                            textAlign: "center",
-                            display: "flex",
-                            flexDirection: "row",
-                            alignItems: "center",
-                            justifyContent: "center",
-                          }}
-                        >
-                          ""
-                          {stargateRouterLoading
-                            ? "loading..."
-                            : `${stargateRouterAddr}`}
-                          ""
-                        </span>
                       </div>
                     </div>
                   </div>
@@ -216,9 +191,8 @@ export default function NewTransection() {
                             style={{ display: "flex", flexDirection: "row" }}
                           >
                             <span style={{ paddingBottom: "50px" }}>
-                              Select your chain
+                              Select dst chain 🤜
                             </span>
-                            🤜
                             <form>
                               <select
                                 onChange={(data) => {
@@ -291,8 +265,7 @@ export default function NewTransection() {
                                 sendToken();
                               }}
                             >
-                              send {tokenQty} USDC to
-                              {recipient.substr(0, 10)} ......
+                              send {tokenQty} USDC to {recipient}
                             </button>
                           </div>
                         </div>

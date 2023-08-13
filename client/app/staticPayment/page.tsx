@@ -28,7 +28,7 @@ export default function NewTransection() {
     console.log("onSuccess", data);
   };
   const [userID, setUserID] = useState("");
-  const [verified, setVerified] = useState(false);
+  const [verified, setVerified] = useState(true);
   const [mounted, setMounted] = useState(false);
   const [tokenQty, setTokenQty] = useState(10);
   const [dstChainId, setDstChainId] = useState(10106);

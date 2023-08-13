@@ -5,7 +5,6 @@ export default function Button() {
     <>
       <Link href="/signup">
         <button className="cssbuttons-io-button">
-          {" "}
           Get started
           <div className="icon">
             <svg

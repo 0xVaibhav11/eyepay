@@ -14,8 +14,15 @@ const LOGO_HEIGHT = 122;
 const k_SCALE = 3.1;
 
 export default function Home() {
+  const [mounted, setMounted] = React.useState(false);
   const { width, height } = useDeviceSize();
   const [line2Txt, setLine2Txt] = React.useState("SEEMLESS");
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
   return (
     <>
       <main className={styles.main}>
@@ -123,9 +130,7 @@ export default function Home() {
             a secure & fast way to pay your friends and others.
           </div>
           <div className={styles.right}>
-            <Link href="/signup">
-              <Button />
-            </Link>
+            <Button />
           </div>
         </div>
         <div className={styles.section2}>
