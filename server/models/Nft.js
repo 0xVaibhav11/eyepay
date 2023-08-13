@@ -4,8 +4,7 @@ const Nft = new mongoose.Schema(
   {
     orbID: { type: String, required: true },
     ownerNull: { type: String, required: true },
-    Zoralink: { type: String, required: true },
-    price: { type: String, required: true },
+    address: { type: String, required: true },
   },
   { timestamps: true }
 );

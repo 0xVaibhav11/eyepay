@@ -4,13 +4,12 @@ const Nfts = require("../models/Nft");
 router.route("/").post(async (req, res) => {
   console.log(req.body);
   try {
-    const { orbID, ownerNull, Zoralink, price } = req.body;
-
+    const { orbID, ownerNull, address } = req.body;
+    console.log(orbID, ownerNull, address);
     const Nft = new Nfts({
       orbID,
       ownerNull,
-      Zoralink,
-      price,
+      address,
     });
 
     await Nft.save();
