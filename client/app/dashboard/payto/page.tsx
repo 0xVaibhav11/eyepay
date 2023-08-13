@@ -178,7 +178,7 @@ export default function NewTransection() {
                               className={styles.input1}
                               onChange={handleChange}
                             />
-                          </div>{" "}
+                          </div>
                         </div>
                       </div>
                     </div>

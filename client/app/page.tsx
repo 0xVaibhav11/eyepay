@@ -27,14 +27,16 @@ export default function Home() {
     <>
       <main className={styles.main}>
         <div className={styles.background}>
-          <img
+          <Image
+            priority
             className={styles.bggrid1}
             src="/grid.svg"
             alt="grid1"
             width={250}
             height={250}
           />
-          <img
+          <Image
+            priority
             className={styles.bggrid2}
             src="/grid2.svg"
             alt="grid1"
@@ -42,7 +44,8 @@ export default function Home() {
             height={240}
           />
 
-          <img
+          <Image
+            priority
             className={styles.line1}
             src="/line2.svg"
             alt="grid1"
@@ -161,72 +164,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-        {/* <div className={styles.section3}>
-          <div className={styles.heading5}>
-            Powered
-            <h1
-              style={{ transform: "rotate(-24deg)" }}
-              className={styles.span1}
-            >
-              by
-              <Image
-                priority
-                src="/sparkle-outline.svg"
-                alt="sparkle"
-                width={67}
-                height={67}
-              />
-            </h1>
-          </div>
-          <div className={styles.sponsers}>
-            <div className={styles.items}>
-              <Image
-                priority
-                src="/sponserpngs/optimisum.png"
-                alt="arrow"
-                width={155}
-                height={58}
-              />{" "}
-              <Image
-                priority
-                src="/sponserpngs/worldcoin.png"
-                alt="arrow"
-                width={155}
-                height={32}
-              />{" "}
-              <Image
-                priority
-                src="/sponserpngs/hyperlane.png"
-                alt="arrow"
-                width={155}
-                height={58}
-              />
-            </div>
-            <div className={styles.items}>
-              <Image
-                priority
-                src="/sponserpngs/zora.png"
-                alt="arrow"
-                width={155}
-                height={58}
-              />
-              <Image
-                priority
-                src="/sponserpngs/base.png"
-                alt="arrow"
-                width={155}
-                height={68}
-              />
-              <Image
-                priority
-                src="/sponserpngs/mode.png"
-                alt="arrow"
-                width={155}
-                height={68}
-              />
-            </div>
-          </div>
-        </div> */}
       </main>
     </>
   );
