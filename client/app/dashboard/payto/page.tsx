@@ -15,18 +15,20 @@ import {
   getUAappAddr,
   getUAappAbi,
   getUsdcAddress,
-  getDstChainID,
 } from "../../contracts/contracts";
 
 export default function NewTransection() {
   const [mounted, setMounted] = useState(false);
-  const [tokenQty, setTokenQty] = useState(10);
-  const [recipient, setRecipient] = useState("0x00000");
-  const [dstChain, setDstChain] = useState("avalanche-fuji");
-  const [dstChainId, setDstChainId] = useState(getDstChainID(dstChain));
-  const [dstUAappAddr, setDstUAappAddr] = useState(
-    getUAappAddr(dstChain) as string
+  const [tokenQty, setTokenQty] = useState<number>(10);
+  const [dstChainId, setDstChainId] = useState<number>(10106);
+
+  const [recipient, setRecipient] = useState(
+    "0x3C9eAA58eC0Eb82D138FcE5ee1C649aD4B48a809"
   );
+  const [dstUAappAddr, setDstUAappAddr] = useState(
+    "0x2Db09b54E67824f295A6885Ceb735ca0785F7F32"
+  );
+  const [fees, setFees] = useState(ethers.parseEther("0.025"));
 
   useEffect(() => {
     setMounted(true);
@@ -51,8 +53,8 @@ export default function NewTransection() {
     address: `0x${contractAddr}`,
     abi: getUAappAbi(chain?.network as string),
     functionName: "swap",
-    onSuccess(txHash) {
-      console.log("success", txHash);
+    onSuccess(data) {
+      console.log("success", data);
     },
   });
   const {
@@ -70,6 +72,12 @@ export default function NewTransection() {
     address: getUsdcAddress(chain?.network as string),
     abi: erc20ABI,
     functionName: "approve",
+  });
+  const { data: usdcAllowance } = useContractRead({
+    address: getUsdcAddress(chain?.network as string),
+    abi: erc20ABI,
+    functionName: "allowance",
+    args: [`0x${address?.split("x")[1]}`, `0x${contractAddr}`],
   });
 
   async function sendToken() {
@@ -95,53 +103,28 @@ export default function NewTransection() {
     }
   }
 
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+    setRecipient(e.currentTarget.value);
+  }
+  function handleToken(e: React.ChangeEvent<HTMLInputElement>) {
+    const value = parseInt(e.target.value);
+
+    setTokenQty(value);
+  }
+  function chainHandler(e: React.ChangeEvent<HTMLSelectElement>) {
+    const value = parseInt(e.target.value);
+
+    setDstChainId(value);
+  }
+
+  useEffect(() => {
+    console.log(dstChainId);
+  }, [dstChainId]);
+
   if (!mounted) return <div>loading...</div>;
   return (
     <>
       <div suppressHydrationWarning className={styles.main}>
-        {/* {chain && <div>Connected to {chain.network}</div>}
-        <div>
-          {" "}
-          {isBalanceLoading
-            ? "loading..."
-            : `$${data?.formatted} ${data?.symbol}`}
-        </div>
-        {connectors.map((connector) => {
-          if (address && connector.id === activeConnector?.id) return null;
-          return (
-            <button
-              className={styles.paybtn}
-              disabled={!connector.ready}
-              key={connector.id}
-              onClick={() => connect({ connector })}
-            >
-              {connector.name}
-              {isLoading &&
-                pendingConnector?.id === connector.id &&
-                " (connecting)"}
-            </button>
-          );
-        })}
-        {error && <div>{error.message}</div>}
-        <div> {address ? address : "Connect to a wallet"}</div>
-
-        <button
-          onClick={() => {
-            sendToken();
-          }}
-          className={styles.paybtn}
-        >
-          send {tokenQty} USDC to {recipient}
-        </button>
-
-        <div className={styles.heading}>New-Transaction</div>
-        <div>
-          <div className={styles.a}>
-            <div className={styles.b}>chains</div>
-          </div>
-          <hr />
-        </div> */}
-
         <div className={styles.Transection}>
           <div className={styles.container}>
             <div className={styles.searchcontainer}>
@@ -194,21 +177,33 @@ export default function NewTransection() {
                     </div>
                     <div>
                       <div>
-                        <span>enter address </span>
-                        <div>
-                          <input className={styles.input1} />
-                        </div>{" "}
-                        StargateAddr:{" "}
+                        <div className={styles.addr}>
+                          <span style={{ paddingTop: "10px" }}>
+                            enter address{" "}
+                          </span>
+                          <div>
+                            <input
+                              className={styles.input1}
+                              onChange={handleChange}
+                            />
+                          </div>{" "}
+                        </div>
+
                         <span
                           style={{
                             color: "black",
                             textAlign: "center",
-                            marginTop: "10px",
+                            display: "flex",
+                            flexDirection: "row",
+                            alignItems: "center",
+                            justifyContent: "center",
                           }}
                         >
+                          ""
                           {stargateRouterLoading
                             ? "loading..."
                             : `${stargateRouterAddr}`}
+                          ""
                         </span>
                       </div>
                     </div>
@@ -217,60 +212,77 @@ export default function NewTransection() {
                     <div className={styles.data}>
                       <div>
                         <div className={styles.inputs}>
-                          <div>
-                            <div>
-                              select your network
-                              <br />
-                              👇
-                              <form>
-                                <select
-                                  style={{
-                                    padding: "10px 0px 10px 0px",
-                                    backgroundColor: "white",
-                                    color: "black",
-                                    borderRadius: "5px",
-                                    fontSize: "18px",
-                                  }}
+                          <div
+                            style={{ display: "flex", flexDirection: "row" }}
+                          >
+                            <span style={{ paddingBottom: "50px" }}>
+                              Select your chain
+                            </span>
+                            🤜
+                            <form>
+                              <select
+                                onChange={(data) => {
+                                  chainHandler(data);
+                                }}
+                                style={{
+                                  padding: "10px 0px 10px 0px",
+                                  backgroundColor: "white",
+                                  color: "black",
+                                  display: "flex",
+                                  alignItems: "center",
+                                  justifyContent: "center",
+                                  width: "20rem",
+                                  borderRadius: "5px",
+                                  fontSize: "18px",
+                                  borderColor: "#818cf8",
+                                }}
+                                className=""
+                                name="languages"
+                                id="lang"
+                              >
+                                <option
+                                  style={{ padding: "10px 0px 10px 0px" }}
                                   className=""
-                                  name="languages"
-                                  id="lang"
+                                  value="10106"
                                 >
-                                  <option
-                                    style={{ padding: "10px 0px 10px 0px" }}
-                                    className=""
-                                    value="fuji"
-                                  >
-                                    fuji
-                                  </option>
-                                  <option
-                                    style={{ padding: "10px 0px 10px 0px" }}
-                                    className=""
-                                    value="mumbai"
-                                  >
-                                    mumbai
-                                  </option>
-                                  <option
-                                    style={{ padding: "10px 0px 10px 0px" }}
-                                    className=""
-                                    value="goarli"
-                                  >
-                                    goarli
-                                  </option>
-                                  <option
-                                    style={{ padding: "10px 0px 10px 0px" }}
-                                    className=""
-                                    value="optimisum gorali"
-                                  >
-                                    optimisum gorali
-                                  </option>
-                                </select>
-                              </form>
-                            </div>
+                                  fuji
+                                </option>
+                                <option
+                                  style={{ padding: "10px 0px 10px 0px" }}
+                                  className=""
+                                  value="10121"
+                                >
+                                  goerli
+                                </option>
+                                <option
+                                  style={{ padding: "10px 0px 10px 0px" }}
+                                  className=""
+                                  value="10109"
+                                >
+                                  mumbai
+                                </option>
+                                <option
+                                  style={{ padding: "10px 0px 10px 0px" }}
+                                  className=""
+                                  value="10132"
+                                >
+                                  optimisum gorali
+                                </option>
+                              </select>
+                            </form>
                           </div>
+
                           <div>
-                            <span>enter amount </span>
-                            <div>
-                              <input className={styles.input1} />
+                            <div className={styles.input2}>
+                              <span>enter amount </span>
+                              <div>
+                                <input
+                                  className={styles.input1}
+                                  type="number"
+                                  value={tokenQty}
+                                  onChange={handleToken}
+                                />
+                              </div>
                             </div>
                             <button
                               style={{ padding: "20px" }}
@@ -279,8 +291,8 @@ export default function NewTransection() {
                                 sendToken();
                               }}
                             >
-                              send {tokenQty} USDC to {recipient.substr(0, 10)}
-                              ......
+                              send {tokenQty} USDC to
+                              {recipient.substr(0, 10)} ......
                             </button>
                           </div>
                         </div>

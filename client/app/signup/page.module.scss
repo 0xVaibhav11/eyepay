@@ -86,9 +86,11 @@
         content: "";
         position: absolute;
         width: 100px;
-        background-image: linear-gradient(180deg,
-            rgb(0, 183, 255),
-            rgb(255, 48, 255));
+        background-image: linear-gradient(
+          180deg,
+          rgb(0, 183, 255),
+          rgb(255, 48, 255)
+        );
         height: 130%;
         animation: rotBGimg 3s linear infinite;
         transition: all 0.2s linear;
@@ -134,9 +136,11 @@
     top: 50%;
     // width: 100px;
     height: 2px;
-    background: linear-gradient(-45deg,
-        rgba(95, 145, 255, 1),
-        rgba(0, 0, 255, 0));
+    background: linear-gradient(
+      -45deg,
+      rgba(95, 145, 255, 1),
+      rgba(0, 0, 255, 0)
+    );
     border-radius: 999px;
     filter: drop-shadow(0 0 6px rgba(105, 155, 255, 1));
     animation: tail $shooting-time ease-in-out infinite,
@@ -149,10 +153,12 @@
       right: 0;
       // width: 30px;
       height: 2px;
-      background: linear-gradient(-45deg,
-          rgba(0, 0, 255, 0),
-          rgba(95, 145, 255, 1),
-          rgba(0, 0, 255, 0));
+      background: linear-gradient(
+        -45deg,
+        rgba(0, 0, 255, 0),
+        rgba(95, 145, 255, 1),
+        rgba(0, 0, 255, 0)
+      );
       transform: translateX(50%) rotateZ(45deg);
       border-radius: 100%;
       animation: shining $shooting-time ease-in-out infinite;
@@ -168,10 +174,12 @@
       right: 0;
       // width: 30px;
       height: 2px;
-      background: linear-gradient(-45deg,
-          rgba(0, 0, 255, 0),
-          rgba(95, 145, 255, 1),
-          rgba(0, 0, 255, 0));
+      background: linear-gradient(
+        -45deg,
+        rgba(0, 0, 255, 0),
+        rgba(95, 145, 255, 1),
+        rgba(0, 0, 255, 0)
+      );
       transform: translateX(50%) rotateZ(45deg);
       border-radius: 100%;
       animation: shining $shooting-time ease-in-out infinite;
@@ -180,7 +188,7 @@
 
     @for $i from 1 through 200 {
       &:nth-child(#{$i}) {
-        $delay: random(9999)+0ms;
+        $delay: random(9999) + 0ms;
         top: calc(100% - #{random(1900) - 200px});
         left: calc(60% - #{random(1200) + 0px});
         animation-delay: $delay;
@@ -241,4 +249,137 @@
       transform: rotate(45 + 360deg);
     }
   }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 0.4em;
+  background-color: #171717;
+  border-radius: 20px;
+}
+
+#heading {
+  text-align: center;
+  margin-top: 2em;
+  margin-bottom: 10px;
+  color: rgb(0, 255, 200);
+  font-size: 1.2em;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  border-radius: 25px;
+  padding: 0.6em;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: #171717;
+  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+}
+
+.input-icon {
+  height: 1.3em;
+  width: 1.3em;
+  fill: rgb(0, 255, 200);
+}
+
+.inputfield {
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  color: rgb(0, 255, 200);
+}
+
+.form .btn {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 2.5em;
+}
+
+.button1 {
+  padding: 0.5em;
+  padding-left: 1.1em;
+  padding-right: 1.1em;
+  width: 80%;
+  border-radius: 5px;
+  margin-top: 20px;
+  border: none;
+  outline: none;
+  transition: 0.4s ease-in-out;
+  background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+  color: rgb(0, 0, 0);
+}
+
+.button1:hover {
+  background-image: linear-gradient(163deg, #00642f 0%, #13034b 100%);
+  color: rgb(0, 255, 200);
+}
+
+.button2 {
+  padding: 0.5em;
+  padding-left: 2.3em;
+  padding-right: 2.3em;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  transition: 0.4s ease-in-out;
+  background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+  color: rgb(0, 0, 0);
+}
+
+.button2:hover {
+  background-image: linear-gradient(163deg, #00642f 0%, #13034b 100%);
+  color: rgb(0, 255, 200);
+}
+
+.button3 {
+  margin-bottom: 3em;
+  padding: 0.5em;
+  border-radius: 5px;
+  width: 80%;
+  border: none;
+  outline: none;
+  transition: 0.4s ease-in-out;
+  background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+  color: rgb(0, 0, 0);
+}
+
+.button3:hover {
+  background-image: linear-gradient(163deg, #a00000fa 0%, #d10050 100%);
+  color: rgb(255, 255, 255);
+}
+
+.card {
+  background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+  border-radius: 22px;
+  transition: all 0.3s;
+}
+
+.card2 {
+  border-radius: 0;
+  transition: all 0.2s;
+}
+
+.card2:hover {
+  transform: scale(0.98);
+  border-radius: 20px;
+}
+
+.card:hover {
+  box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.3);
+}
+.card1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15%;
 }
