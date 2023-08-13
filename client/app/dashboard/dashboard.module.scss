@@ -201,24 +201,33 @@
           margin: 20px;
           background-color: #c7d2fe;
 
-          .avatar {
-            vertical-align: middle;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            padding: 5px;
-          }
-
-          .cardData {
-            padding: 20px;
+          .arrange {
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            flex-direction: row;
+            justify-content: center;
+            gap: 5vh;
+            .avatar {
+              vertical-align: middle;
+              margin-top: 2vh;
+              width: 80px;
+              height: 80px;
+              border-radius: 20%;
+              padding: 5px;
+            }
 
-            .data {
-              margin: 6px;
-              color: #f5f5f5;
-              font-size: large;
+            .cardData {
+              margin-top: 3vh;
+              display: flex;
+              gap: 5vh;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+
+              .data {
+                gap: 5vh;
+                color: #f5f5f5;
+                font-size: large;
+              }
             }
           }
         }
@@ -312,8 +321,8 @@
       gap: 4.5vh;
 
       .card3 {
-        height: 55vh;
-        width: 75vh;
+        height: 70vh;
+        width: 155vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -363,14 +372,14 @@
       .Transection {
         width: 100%;
 
-        >h2 {
+        > h2 {
           font-size: 18px;
           color: #818cf8;
           margin-left: 1px;
           height: 3.8rem;
         }
 
-        >table {
+        > table {
           background: white;
           width: 100%;
           border-radius: 25px;
@@ -383,14 +392,14 @@
             box-shadow: none;
           }
 
-          >thead {
+          > thead {
             font-size: 18px;
             color: black;
 
-            >tr {
+            > tr {
               height: 2.8rem;
 
-              >th {
+              > th {
                 text-align: center;
                 border-bottom: 1px solid black #e8e8e8;
                 height: 2.8rem;
@@ -398,14 +407,14 @@
             }
           }
 
-          >tbody {
+          > tbody {
             font-size: 14px;
             color: black;
 
-            >tr {
+            > tr {
               height: 2.8rem;
 
-              >td {
+              > td {
                 border-bottom: 1.5px solid #f5f3ff;
                 height: 2.8rem;
               }
