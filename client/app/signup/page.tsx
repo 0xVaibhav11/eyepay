@@ -115,7 +115,7 @@ export default function LoginWithWorldcoin() {
                   setUserID(e.target.value);
                   try {
                     const res = await axios.get(
-                      `http://localhost:8081/nft/${e.target.value}`
+                      `https://eyepay.onrender.com/nft/${e.target.value}`
                     );
                     console.log(res.data[0]);
                     setUserData(res.data[0]);
@@ -172,11 +172,11 @@ export default function LoginWithWorldcoin() {
                       signal: "nftcreate", // if we don't have a signal, use the empty string
                     };
                     axios
-                      .post("http://localhost:8081/api", data)
+                      .post("https://eyepay.onrender.com/api", data)
                       .then((res) => {
                         console.log(res);
                         console.log(res.data);
-                        axios.post("http://localhost:8081/nft", {
+                        axios.post("https://eyepay.onrender.com/nft", {
                           orbID: userID,
                           address: Addres,
                           ownerNull: result.merkle_root,

@@ -3,6 +3,7 @@ import styles from "./page.module.scss";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { ethers } from "ethers";
+import { useSearchParams } from "next/navigation";
 import axios from "axios";
 import { IDKitWidget, ISuccessResult } from "@worldcoin/idkit";
 import styled from "./worldcoin.module.scss";
@@ -15,6 +16,7 @@ import {
   useNetwork,
   erc20ABI,
 } from "wagmi";
+
 import {
   getUAappAddr,
   getUAappAbi,
@@ -28,7 +30,7 @@ export default function NewTransection() {
     console.log("onSuccess", data);
   };
   const [userID, setUserID] = useState("");
-  const [verified, setVerified] = useState(true);
+  const [verified, setVerified] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [tokenQty, setTokenQty] = useState(10);
   const [dstChainId, setDstChainId] = useState(10106);
@@ -39,9 +41,22 @@ export default function NewTransection() {
     "0x2Db09b54E67824f295A6885Ceb735ca0785F7F32"
   );
   const [fees, setFees] = useState(ethers.parseEther("0.025"));
-
+  const searchParams = useSearchParams();
+  const [datai, setDatai] = useState({
+    ammount: 0,
+    orbid: "",
+    chain: "",
+  } as any);
   useEffect(() => {
     setMounted(true);
+    //@ts-ignore
+    for (const [key, value] of searchParams?.entries()) {
+      console.log(`${key}, ${value}`);
+      setDatai({ ...datai, [key]: value });
+    }
+    setTimeout(() => {
+      console.log(datai);
+    }, 1000);
   }, []);
   const { connector: activeConnector, isConnected, address } = useAccount();
 
@@ -55,6 +70,7 @@ export default function NewTransection() {
     token: getUsdcAddress(chain?.network as string),
     watch: true,
   });
+
   const { connect, connectors, error, isLoading, pendingConnector } =
     useConnect();
   const contractAddr = getUAappAddr(chain?.network as string)?.split("x")[1];
@@ -117,7 +133,6 @@ export default function NewTransection() {
   };
   const now: number = getTimestamp();
   const actionid = now.toString();
-  console.log(actionid);
 
   const action = async function checkuser() {
     try {
@@ -140,6 +155,7 @@ export default function NewTransection() {
     action: string; // or get this from environment variables,
     signal: string; // if we don't have a signal, use the empty string
   };
+
   if (!mounted) return <div>loading...</div>;
   return (
     <>
@@ -323,7 +339,7 @@ export default function NewTransection() {
                 >
                   <IDKitWidget
                     app_id="app_staging_9cd4757eabeba0a355dd24c771aa78be" // obtained from the Developer Portal
-                    action="logins"
+                    action={actionid}
                     signal="fsfv"
                     onSuccess={
                       (onSuccess = (result: ISuccessResult) => {
@@ -349,7 +365,7 @@ export default function NewTransection() {
                         onClick={async () => {
                           try {
                             const res = await axios.get(
-                              `http://localhost:8081/nft/${nameId}`
+                              `https://eyepay.onrender.com/nft/${nameId}`
                             );
                             setUserData(res.data[0]);
                             if (res.data.length > 0) {

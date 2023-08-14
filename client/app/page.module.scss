@@ -59,7 +59,7 @@ $hero-font-size: 6rem;
       .logo {
         user-select: none;
 
-        >img {
+        > img {
           pointer-events: none;
         }
       }
@@ -101,12 +101,11 @@ $hero-font-size: 6rem;
       justify-content: center;
       font: var(--font-machina);
       margin-top: 10%;
-
       .line1 {
         position: relative;
         font-size: $hero-font-size;
 
-        >h1 {
+        > h1 {
           line-height: 100%;
         }
 
@@ -130,7 +129,7 @@ $hero-font-size: 6rem;
           margin-right: 3rem;
         }
 
-        >h1 {
+        > h1 {
           transition: all 0.2s ease-in-out;
           line-height: 100%;
           font-family: var(--font-migra);
@@ -185,144 +184,56 @@ $hero-font-size: 6rem;
           margin-left: 3rem;
         }
 
-        >h1 {
+        > h1 {
           line-height: 100%;
         }
       }
     }
+    .getStartedbutton {
+      width: 80%;
 
-
-
-
-  }
-
-  .getstarted {
-    border-top: 2px solid white;
-    width: 90%;
-    height: 25vh;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 5%;
-
-    .para {
-      width: 60%;
-      height: 100%;
-      padding: 2% 5%;
-      font-size: 2rem;
+      padding: 5% 5% 0 5%;
       display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .right {
-      width: 40%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-
-
+      flex-direction: row;
+      justify-content: space-evenly;
+      > h1 {
+        font-size: large;
+      }
     }
   }
 
   .section2 {
     width: 100%;
-    height: 130vh;
-    margin-bottom: 5%;
+    min-height: 100vh;
+    padding: 5% 5% 0 5%;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    // background-color: white;
+    flex-direction: column;
 
-    .inner {
-      width: 90%;
-      height: 100%;
-      border-radius: 50px;
-      background-color: white;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
+    .threed {
+      position: relative;
+      width: 30%;
+      scroll-behavior: smooth;
 
-      .top {
-        width: 100%;
-        height: 25%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-
-        .left {
-          width: 50%;
-          height: 100%;
-          padding-top: 2%;
-          padding-left: 5%;
-
-          .heading {
-            font-size: 10rem;
-            font-weight: 700;
-            font-family: var(--font-machina);
-            color: black;
-          }
-
-          .subheading {
-            font-size: 10rem;
-            font-weight: 700;
-            font-family: var(--font-migra);
-            color: #64e7f3;
-            margin-top: -10%;
-            margin-left: 4%;
-            transform: rotate(-10deg);
-          }
-
-          .subheading2 {
-            font-size: 10rem;
-            font-weight: 700;
-            font-family: var(--font-machina);
-            color: black;
-            margin-top: -18%;
-            margin-left: 60%;
-          }
-
-          .sparkle {
-            margin-top: -7%;
-          }
-
-        }
-
-        .right {
-          width: 50%;
-          height: 100%;
-          color: black;
-          font-size: 2rem;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding: 2% 4% 0 15%;
-
-        }
+      .tdobj {
+        position: absolute;
+        z-index: 999;
       }
+    }
 
-      .ss {
-        height: 100%;
-        width: 90%;
-        padding: 2% 0 5% 0;
-
-        >img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          border-radius: 20px;
-
-        }
-
+    .card1 {
+      width: 100%;
+      height: 70vh;
+      background-color: white;
+      border: 2px;
+      display: flex;
+      justify-content: space-between;
+      border-radius: 50px;
+      .paragraph {
+        padding: 0px 10% 0px 10%;
+        font-size: 17px;
       }
     }
   }
-
   .section3 {
     width: 100%;
     min-height: 100vh;
@@ -332,15 +243,14 @@ $hero-font-size: 6rem;
     background-image: url(../public/Images/assets/biggrid.svg);
     justify-content: space-between;
     background-size: 100vh 100vh;
-
     .heading5 {
       font-size: 120px;
       font-weight: 700;
+
       font-family: var(--font-migra);
       font-style: italic;
       text-shadow: 10px 10px 30px #f468dc;
-
-      >h1 {
+      > h1 {
         transition: all 0.2s ease-in-out;
         line-height: 100%;
         font-family: var(--font-migra);
@@ -368,7 +278,6 @@ $hero-font-size: 6rem;
         }
       }
     }
-
     .sponsers {
       width: 70vh;
       height: 30vh;
@@ -381,7 +290,6 @@ $hero-font-size: 6rem;
       justify-content: center;
       place-items: center;
       align-items: center;
-
       .items {
         padding: 50px;
       }

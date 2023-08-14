@@ -72,6 +72,7 @@ export default function NewTransection() {
     functionName: "approve",
   });
 
+  // send token to reciver
   async function sendToken() {
     try {
       usdcApprove({
